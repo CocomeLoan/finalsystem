@@ -1,0 +1,56 @@
+{
+  "name": "Concern",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Student ID who submitted"
+    },
+    "student_name": {
+      "type": "string",
+      "description": "Student name"
+    },
+    "department": {
+      "type": "string",
+      "description": "Student department"
+    },
+    "message": {
+      "type": "string",
+      "description": "Concern message"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewed",
+        "resolved"
+      ],
+      "default": "pending"
+    },
+    "replies": {
+      "type": "array",
+      "description": "Conversation thread of replies",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "student_id",
+    "message"
+  ]
+}

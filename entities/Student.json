@@ -1,0 +1,107 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Unique student ID"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the student"
+    },
+    "course": {
+      "type": "string",
+      "enum": [
+        "BSCS",
+        "BSIT",
+        "BLIS",
+        "BS Computer Science",
+        "BS Information Technology",
+        "BS Engineering",
+        "Business Administration",
+        "Education",
+        "Arts and Sciences"
+      ],
+      "description": "Course/program"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "Computer Science",
+        "Information Technology",
+        "Engineering",
+        "Business Administration",
+        "Education",
+        "Arts and Sciences"
+      ],
+      "description": "Department"
+    },
+    "year": {
+      "type": "number",
+      "description": "Year level"
+    },
+    "email": {
+      "type": "string",
+      "description": "Student email"
+    },
+    "study_hours": {
+      "type": "number",
+      "description": "Study hours per day"
+    },
+    "library_visits": {
+      "type": "number",
+      "description": "Library visits per week"
+    },
+    "scholarship": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no"
+      ],
+      "description": "Has scholarship"
+    },
+    "scholarship_amount": {
+      "type": "number",
+      "description": "Scholarship amount in PHP"
+    },
+    "family_income": {
+      "type": "number",
+      "description": "Family income per month in PHP"
+    },
+    "lms_login_per_month": {
+      "type": "number",
+      "description": "LMS logins per month"
+    },
+    "gpa_history": {
+      "type": "array",
+      "description": "GPA per semester",
+      "items": {
+        "type": "object",
+        "properties": {
+          "semester": {
+            "type": "string"
+          },
+          "gpa": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "graduated"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "student_id",
+    "name",
+    "course",
+    "year"
+  ]
+}

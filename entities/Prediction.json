@@ -1,0 +1,86 @@
+{
+  "name": "Prediction",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Student ID"
+    },
+    "student_name": {
+      "type": "string",
+      "description": "Student name"
+    },
+    "department": {
+      "type": "string",
+      "description": "Department"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "Good Standing",
+        "At-Risk"
+      ],
+      "description": "Prediction result"
+    },
+    "confidence": {
+      "type": "number",
+      "description": "Confidence score"
+    },
+    "model_used": {
+      "type": "string",
+      "description": "Algorithm used"
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Student strengths"
+    },
+    "weaknesses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Student weaknesses"
+    },
+    "explanation": {
+      "type": "string",
+      "description": "XAI explanation"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recommendations for student"
+    },
+    "feature_importance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "feature": {
+            "type": "string"
+          },
+          "importance": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "prediction_type": {
+      "type": "string",
+      "enum": [
+        "basic",
+        "advanced"
+      ],
+      "description": "Basic (GPA) or Advanced (with subjects)"
+    }
+  },
+  "required": [
+    "student_id",
+    "result",
+    "model_used"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "TrainingLog",
+  "type": "object",
+  "properties": {
+    "algorithm": {
+      "type": "string",
+      "description": "Algorithm name"
+    },
+    "accuracy": {
+      "type": "number"
+    },
+    "precision": {
+      "type": "number"
+    },
+    "recall": {
+      "type": "number"
+    },
+    "f1_score": {
+      "type": "number"
+    },
+    "roc_auc": {
+      "type": "number"
+    },
+    "is_best": {
+      "type": "boolean",
+      "default": false
+    },
+    "department": {
+      "type": "string",
+      "description": "Department scope"
+    },
+    "training_session_id": {
+      "type": "string",
+      "description": "Group training runs"
+    },
+    "dataset_size": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "algorithm",
+    "accuracy"
+  ]
+}

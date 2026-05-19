@@ -1,0 +1,31 @@
+{
+  "name": "SubjectGrade",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Reference to student"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject name"
+    },
+    "grade": {
+      "type": "number",
+      "description": "Grade value"
+    },
+    "semester": {
+      "type": "string",
+      "description": "Semester taken"
+    },
+    "school_year": {
+      "type": "string",
+      "description": "School year"
+    }
+  },
+  "required": [
+    "student_id",
+    "subject",
+    "grade"
+  ]
+}
