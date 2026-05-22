@@ -48,10 +48,10 @@ export default function DeveloperDashboard() {
           <CardContent>
             <div className="space-y-3">
               {[
-                { label: 'Platform', value: 'Base44 React' },
+                { label: 'Platform', value: 'SMCC' },
                 { label: 'Auth System', value: 'Role-based (RBAC)' },
-                { label: 'ML Engine', value: 'AI-powered prediction' },
-                { label: 'Database', value: 'Entity store' },
+                { label: 'ML Engine', value: 'Python' },
+                { label: 'Database', value: 'Supabase' },
               ].map(item => (
                 <div key={item.label} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                   <span className="text-sm text-muted-foreground">{item.label}</span>

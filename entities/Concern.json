@@ -6,9 +6,9 @@
       "type": "string",
       "description": "Student ID who submitted"
     },
-    "student_name": {
+    "name": {
       "type": "string",
-      "description": "Student name"
+      "description": "Student full name"
     },
     "department": {
       "type": "string",
@@ -47,6 +47,10 @@
           }
         }
       }
+    },
+    "created_date": {
+      "type": "string",
+      "description": "Date when concern was created"
     }
   },
   "required": [

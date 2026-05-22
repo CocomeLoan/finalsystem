@@ -18,9 +18,18 @@ export default function ConcernsPage({ departmentFilter }) {
   const { portalUser } = usePortalAuth();
   const qc = useQueryClient();
 
-  const { data: concerns = [] } = useQuery({
+  const { data: concerns = [], error, isLoading } = useQuery({
     queryKey: ['concerns'],
-    queryFn: () => base44.entities.Concern.list('-created_date'),
+    queryFn: async () => {
+      try {
+        const result = await base44.entities.Concern.list('-created_date');
+        console.log('Concerns data:', result);
+        return result;
+      } catch (err) {
+        console.error('Error fetching concerns:', err);
+        throw err;
+      }
+    },
   });
 
   const filtered = concerns
@@ -91,6 +100,8 @@ export default function ConcernsPage({ departmentFilter }) {
           <CardContent className="py-12 text-center text-muted-foreground">
             <MessageSquare className="w-12 h-12 mx-auto mb-3 opacity-30" />
             <p>No concerns found</p>
+            {error && <p className="text-red-500 mt-2 text-sm">Error: {error.message}</p>}
+            {isLoading && <p className="mt-2 text-sm">Loading...</p>}
           </CardContent>
         </Card>
       ) : (
@@ -105,7 +116,7 @@ export default function ConcernsPage({ departmentFilter }) {
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-1">
-                        <p className="font-semibold">{c.student_name || c.student_id}</p>
+                        <p className="font-semibold">{c.name || c.student_id}</p>
                         <Badge variant="outline" className="text-xs">{c.department || 'N/A'}</Badge>
                         <Badge className={`text-xs ${statusColors[c.status || 'pending']}`}>
                           {c.status || 'pending'}

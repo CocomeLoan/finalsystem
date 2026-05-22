@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Eye, CheckCircle, AlertTriangle, TrendingUp, Trash2 } from 'lucide-react';
+import { Eye, CheckCircle, AlertTriangle, TrendingUp, Trash2, DollarSign, User, BookOpen } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { toast } from 'sonner';
 import {
@@ -31,7 +31,7 @@ function PredictionDetail({ prediction }) {
           <div className="p-3 rounded-full bg-destructive/10"><AlertTriangle className="w-8 h-8 text-destructive" /></div>
         )}
         <div>
-          <h3 className="text-lg font-bold">{prediction.student_name || prediction.student_id}</h3>
+          <h3 className="text-lg font-bold">{prediction.student_name || prediction.name || prediction.student_id}</h3>
           <div className="flex items-center gap-2 mt-1">
             <Badge variant={prediction.result === 'Good Standing' ? 'default' : 'destructive'}>{prediction.result}</Badge>
             <span className="text-sm text-muted-foreground">
@@ -46,6 +46,48 @@ function PredictionDetail({ prediction }) {
           <p className="text-sm text-muted-foreground bg-muted/50 p-3 rounded-lg">{prediction.explanation}</p>
         </div>
       )}
+
+      {/* Categorized Risk Analysis */}
+      {(prediction.financial_risk || prediction.personal_risk || prediction.academic_risk) && (
+        <div>
+          <h4 className="font-semibold mb-3 text-sm">Categorized Risk Analysis</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* Financial Risk */}
+            {prediction.financial_risk && (
+              <div className={`p-3 rounded-lg ${prediction.financial_risk.isAtRisk ? 'bg-destructive/10 border border-destructive/20' : 'bg-emerald-50 border border-emerald-200'}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <DollarSign className={`w-4 h-4 ${prediction.financial_risk.isAtRisk ? 'text-destructive' : 'text-emerald-600'}`} />
+                  <span className="font-medium text-sm">Financial</span>
+                </div>
+                <p className="text-xs text-muted-foreground">{prediction.financial_risk.explanation}</p>
+              </div>
+            )}
+
+            {/* Personal Risk */}
+            {prediction.personal_risk && (
+              <div className={`p-3 rounded-lg ${prediction.personal_risk.isAtRisk ? 'bg-destructive/10 border border-destructive/20' : 'bg-emerald-50 border border-emerald-200'}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <User className={`w-4 h-4 ${prediction.personal_risk.isAtRisk ? 'text-destructive' : 'text-emerald-600'}`} />
+                  <span className="font-medium text-sm">Personal</span>
+                </div>
+                <p className="text-xs text-muted-foreground">{prediction.personal_risk.explanation}</p>
+              </div>
+            )}
+
+            {/* Academic Risk */}
+            {prediction.academic_risk && (
+              <div className={`p-3 rounded-lg ${prediction.academic_risk.isAtRisk ? 'bg-destructive/10 border border-destructive/20' : 'bg-emerald-50 border border-emerald-200'}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className={`w-4 h-4 ${prediction.academic_risk.isAtRisk ? 'text-destructive' : 'text-emerald-600'}`} />
+                  <span className="font-medium text-sm">Academic</span>
+                </div>
+                <p className="text-xs text-muted-foreground">{prediction.academic_risk.explanation}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <h4 className="font-semibold mb-2 text-emerald-600 text-sm">Strengths</h4>
@@ -147,7 +189,7 @@ export default function PredictionLogsPage() {
                 {predictions.map((p, idx) => (
                   <TableRow key={p.id}>
                     <TableCell className="text-muted-foreground text-xs">{predictions.length - idx}</TableCell>
-                    <TableCell className="font-medium text-sm">{p.student_name || '—'}</TableCell>
+                    <TableCell className="font-medium text-sm">{p.student_name || p.name || '—'}</TableCell>
                     <TableCell className="text-sm text-muted-foreground">{p.student_id}</TableCell>
                     <TableCell>
                       <Badge variant="outline" className="text-xs capitalize">{p.prediction_type || 'basic'}</Badge>
@@ -194,7 +236,7 @@ export default function PredictionLogsPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>Delete Prediction Log</AlertDialogTitle>
             <AlertDialogDescription>
-              Delete prediction for {deleting?.student_name || deleting?.student_id}? This cannot be undone.
+              Delete prediction for {deleting?.name || deleting?.student_id}? This cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

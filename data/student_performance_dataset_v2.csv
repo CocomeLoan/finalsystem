@@ -1,0 +1,94 @@
+student_id,name,course,department,year,email,academic_consistency,gpa_trend,subject_mastery_level,exam_performance_consistency,study_habits_consistency,lms_engagement_level,assignment_completion_rate,self_learning_initiative,class_participation,responsiveness_to_feedback,consultation_frequency,group_study_participation,peer_collaboration_quality,academic_peer_environment_strength,adaptation_to_course_difficulty,engagement_in_program_activities,skill_development_alignment,financial_stability,scholarship_support_level,motivation_level,stress_level,time_management_skills,risk_label,study_hours,library_visits,scholarship,scholarship_amount,family_income,lms_login_per_month,status
+STU-0015,Student STU-0015,BSIT,CCIS,4,studentSTU-0015@university.edu,2.8,2,4,2.7,3.6,3.4,3.3,4,3.9,3.1,3,3.1,3.6,3.9,4,3.4,3.3,3.4,3.6,3.7,3.3,2.9,0,2,5,no,0,63955,22,active
+ATR-PERSONAL-04,Student ATR-PERSONAL-04 (Personal Risk),BSCS,CCIS,2,studentATR-PERSONAL-04@university.edu,2.4,2.1,2.8,2.8,1.5,1.6,1.1,1.3,1.4,1.6,1.7,1.9,1.4,1.7,1.8,2,1.6,2.8,2.2,1.2,1,1.4,2,5,2,yes,2202,88579,8,active
+STU-0032,Student STU-0032,BSA,CCIS,2,studentSTU-0032@university.edu,2.7,4,2.5,3.5,3.7,3,2.2,3,3.2,3.1,2.8,1.6,2.6,2.1,2.9,2.7,1.8,3.7,3.1,2.1,2,2.6,1,6,4,yes,8456,66704,16,active
+STU-0072,Student STU-0072,BSA,CCIS,1,studentSTU-0072@university.edu,1,1,2.2,2.1,2,1.6,1.7,2,1.6,1.9,1.6,1,1.1,1.5,1.9,1,1.9,2.5,1.4,1,1.1,1.6,2,6,3,no,0,16094,29,active
+STU-0036,Student STU-0036,BSIT,CCIS,1,studentSTU-0036@university.edu,2.1,4,2.4,2.7,1.3,1.8,2.5,4,3.3,1.5,1.9,2.7,1.8,2.7,2.8,3,2.9,2,2.6,2.6,2.7,2.5,1,6,17,no,0,47721,3,active
+STU-0068,Student STU-0068,BSIT,CCIS,2,studentSTU-0068@university.edu,1.8,1,1,1.3,1,1.8,2.4,2,1,1.4,1.7,1.1,1,1.6,1.5,1.4,1.2,2.5,1.8,2.3,2,1.8,2,1,18,yes,8071,58049,22,active
+STU-0065,Student STU-0065,BSIT,CCIS,1,studentSTU-0065@university.edu,1.2,3,1.4,1.8,1.2,1,1.2,4,1.4,1.6,2,1.1,1.2,2.4,1.9,1.2,1.4,1.7,2.5,1,1.7,1.6,2,5,13,no,0,55706,14,active
+STU-0040,Student STU-0040,BSCS,CCIS,2,studentSTU-0040@university.edu,1.9,3,2.8,2.7,2.9,1.8,2.4,4,3,3.1,1.7,3.6,2.7,2.9,1.8,3.5,3.5,2.9,2.5,2.2,2.8,2.8,1,1,13,yes,15772,37011,2,active
+STU-0001,Student STU-0001,BSCS,CCIS,1,studentSTU-0001@university.edu,3.5,2,3.9,3.5,3,3.2,2.7,4,3.3,3.3,4,3,3.8,2.7,4,4,4,3.1,3.9,3.9,2.9,2.8,0,2,7,yes,24911,46434,14,active
+STU-0047,Student STU-0047,BSA,CCIS,2,studentSTU-0047@university.edu,2,4,3.1,3,2.6,2.4,2.5,3,2.1,3.3,2.1,1.9,2,2.3,2.7,3.2,2.7,2.5,3.4,3.3,2.9,2.5,1,10,1,no,0,53463,30,active
+STU-0028,Student STU-0028,BSA,CCIS,1,studentSTU-0028@university.edu,2.7,2,3.1,3.2,1.8,3.4,2.4,4,2.1,2.4,3.5,2.2,2.5,3,2.7,2.5,2.4,3,3.1,2.1,2.7,1.3,1,4,12,yes,24570,39430,0,active
+STU-0073,Student STU-0073,BSCS,CCIS,4,studentSTU-0073@university.edu,1.6,2,1.4,1.8,1.5,2.3,2.1,2,1.3,1.5,1.9,2,2.2,1.8,1.9,1,2,1.6,2.5,2.1,1.8,1.4,2,3,20,yes,33023,81105,22,active
+STU-0075,Student STU-0075,BSIT,CCIS,2,studentSTU-0075@university.edu,1,1,1,1.4,1.5,1.2,1.1,2,1.6,1.9,2,1.6,1,1.7,2,1.4,1.4,1.9,1.8,1.8,1.4,1.5,2,1,3,no,0,68414,7,active
+STU-0061,Student STU-0061,BSIT,CCIS,1,studentSTU-0061@university.edu,1.5,1,1.8,1.6,1.3,2.1,1.2,2,1.5,2.1,1,1,1.9,1.2,2.2,1.9,1.2,1.7,1,1,1.1,1,2,2,10,no,0,14062,13,active
+STU-0055,Student STU-0055,BSA,CCIS,3,studentSTU-0055@university.edu,1.9,3,1,1.5,2.2,1.4,1,1,1.5,1.5,1,2.2,1.2,1.1,1.3,1,1.5,2,2.4,1.3,1.8,1.7,2,10,11,yes,32901,98254,28,active
+STU-0076,Student STU-0076,BSIT,CCIS,1,studentSTU-0076@university.edu,1.5,1,1.4,1.8,1.7,1.7,1.5,2,1,1.7,1.8,1.3,1.3,2.1,1.6,2.2,1.8,1.3,1.3,1,1.8,1,2,5,13,no,0,69129,20,active
+ATR-FINANCIAL-03,Student ATR-FINANCIAL-03 (Financial Risk),BSA,CCIS,4,studentATR-FINANCIAL-03@university.edu,2.9,1.5,2.6,2.1,3,2.6,1.8,2.2,2.6,2.6,1.4,1.4,1.6,1.9,1.6,1.3,2.5,1.1,1,2.4,2.8,2.3,2,4,4,no,0,5216,8,active
+STU-0008,Student STU-0008,BSCS,CCIS,3,studentSTU-0008@university.edu,3.4,3,3.6,3.6,3.7,3,3.5,1,3.5,3.5,3.4,3.8,3.9,2.9,3.5,3.7,3.5,2.9,2.9,3,2.6,4,1,5,12,yes,19914,47606,6,active
+STU-0071,Student STU-0071,BSCS,CCIS,2,studentSTU-0071@university.edu,1.5,4,1,1.1,1.9,2,1.8,3,1.7,1.5,1.7,1.8,1.5,2,1.5,1.5,1.1,1.9,1.3,1.6,1.6,1.3,2,10,14,yes,32666,68598,10,active
+STU-0067,Student STU-0067,BSIT,CCIS,3,studentSTU-0067@university.edu,1,3,1.8,2.4,2.1,1,1.8,3,1.5,1,1.2,1.7,1.1,1.3,1.4,1.5,1.8,2.9,2.1,1.5,1.9,1.9,2,1,0,no,0,45851,6,active
+ATR-PERSONAL-05,Student ATR-PERSONAL-05 (Personal Risk),BSIT,CCIS,2,studentATR-PERSONAL-05@university.edu,2.7,1.9,2.7,3,1.1,1.3,1.4,1.7,1.4,1.2,1,1.7,1.9,1.5,2.2,1.6,2.1,2.3,2.8,1.1,1.5,1.2,2,4,4,yes,17111,32942,6,active
+ATR-FINANCIAL-01,Student ATR-FINANCIAL-01 (Financial Risk),BSCS,CCIS,3,studentATR-FINANCIAL-01@university.edu,2.9,1.6,2.5,2.3,2.9,2.1,1.6,1.5,2.5,2,1.6,1.4,1.6,1.9,2.1,1.5,2.5,1.2,1,2.8,2.4,2.2,2,5,5,no,0,14535,2,active
+STU-0035,Student STU-0035,BSIT,CCIS,3,studentSTU-0035@university.edu,1.9,4,2.4,3.3,2.9,2.9,3,2,2.2,1.8,1.9,2.4,2.6,2.5,2.9,2.4,2.9,3,2.8,2.6,2,3.1,1,1,19,no,0,44803,30,active
+STU-0020,Student STU-0020,BSCS,CCIS,4,studentSTU-0020@university.edu,3.6,2,4,4,3.7,3.3,3.5,3,3.9,3.5,2.8,3.9,3.6,3.4,3.7,3,3.8,2.8,3.5,3.6,2.9,3.9,0,3,13,yes,32069,90694,13,active
+STU-0045,Student STU-0045,BSIT,CCIS,4,studentSTU-0045@university.edu,3,2,3.1,2.7,2.8,3.1,2.5,3,2,2.6,3.5,2.8,1.7,3,3.1,2.7,2,3.2,2.7,2.5,2.4,2.4,1,8,11,no,0,23399,4,active
+STU-0033,Student STU-0033,BSCS,CCIS,1,studentSTU-0033@university.edu,2.2,2,2.7,3.1,3.4,2.5,2,3,2,2.8,2.1,3.3,3,2.6,2.8,2.4,2.3,2.5,3.4,2.3,2.8,2.7,1,1,5,no,0,64476,15,active
+STU-0003,Student STU-0003,BLIS,CCIS,1,studentSTU-0003@university.edu,3.3,3,3.6,3,3.2,4,3.8,1,3.7,3.7,3.4,3.8,3,2.8,4,3.6,3.4,3.5,2.8,4,3.8,3.5,0,10,13,yes,35343,36365,22,active
+STU-0051,Student STU-0051,BLIS,CCIS,3,studentSTU-0051@university.edu,2.1,3,1.9,3.6,2,3.4,3.7,2,2.1,1.9,2.8,1.8,2.8,1.7,3.2,2.8,3.3,2.7,3.2,2.2,2,3,1,9,12,yes,28157,37767,15,active
+STU-0077,Student STU-0077,BLIS,CCIS,1,studentSTU-0077@university.edu,1,1,1.8,1.9,1.2,1.5,1.5,1,1.8,1.8,1,1.5,2.2,1.5,1.8,2.4,2.2,1.4,1,1.4,1.5,1,2,6,6,no,0,94663,27,active
+STU-0013,Student STU-0013,BLIS,CCIS,1,studentSTU-0013@university.edu,1,2,3.7,3.9,3.6,3.4,3.4,3,3.5,3.4,4,3.3,3,3.5,4,3.4,3.5,3.6,3.9,3.6,3.5,3.5,0,9,9,yes,41803,74340,3,active
+STU-0025,Student STU-0025,BSCS,CCIS,3,studentSTU-0025@university.edu,3.6,4,3.2,3.6,3.9,3.6,3,4,3.6,3.2,3.2,3.2,3.1,3.8,4,3.6,2.8,3.7,3.2,3.8,2.9,3.7,0,10,20,no,0,92210,10,active
+ATR-FINANCIAL-04,Student ATR-FINANCIAL-04 (Financial Risk),BSIT,CCIS,4,studentATR-FINANCIAL-04@university.edu,2.2,1.6,2.6,2.2,2.2,2.4,2.2,1.6,2.2,2.8,1.7,1.5,1.5,1.2,1.7,1.8,1.5,1,1,2.6,2.2,2.6,2,1,4,no,0,9812,0,active
+STU-0004,Student STU-0004,BLIS,CCIS,4,studentSTU-0004@university.edu,3.9,2,3.1,3.3,2.8,3.4,4,1,3.3,3.5,4,3.3,3.4,3.3,3.3,3.4,3.8,2.8,3.3,3.2,3.8,3.1,0,2,14,yes,3315,95477,17,active
+STU-0031,Student STU-0031,BLIS,CCIS,3,studentSTU-0031@university.edu,2.5,4,2.1,2.8,3.1,2.7,2.1,4,2.8,3.4,2.3,2,2.5,2.2,2.7,3.4,2.8,2.9,2.7,1.6,2.3,2.3,1,5,8,no,0,38124,19,active
+STU-0005,Student STU-0005,BSCS,CCIS,2,studentSTU-0005@university.edu,3.2,2,4,2.7,3.8,3.6,3.9,4,3,4,3.8,3.1,3.9,3.6,2.8,3.8,2.9,3.6,3.5,3.5,3.2,3.6,0,4,8,no,0,27154,21,active
+STU-0078,Student STU-0078,BSIT,CCIS,2,studentSTU-0078@university.edu,1.6,2,1.3,1,2.3,1.7,1.3,3,1.4,1.3,1.3,1.2,1.7,1.6,1.4,1.4,1.2,1,1.6,1.8,1.9,2.2,2,6,9,no,0,82308,3,active
+STU-0007,Student STU-0007,BSA,CCIS,1,studentSTU-0007@university.edu,3.6,2,3.9,3.2,2.9,4,4,2,3.8,3.4,4,4,2.9,3.5,3.1,4,3.6,3.4,2.9,2.9,3.3,3.6,0,4,7,yes,43255,35313,12,active
+STU-0059,Student STU-0059,BSA,CCIS,3,studentSTU-0059@university.edu,1.9,4,1,1,1.5,1.8,1.5,2,1.5,1.4,2.3,1.7,1.6,1.6,2.3,1.3,2,1.9,2.5,1.6,1.8,2.4,2,5,5,no,0,14975,2,active
+STU-0053,Student STU-0053,BSCS,CCIS,1,studentSTU-0053@university.edu,1.8,4,1.8,2,1.2,1.7,1,2,1.2,1.6,1.4,1.4,1.5,1.7,1,1.1,1.7,2.4,2.4,1.3,1.5,1.5,2,7,3,yes,32740,93634,19,active
+STU-0014,Student STU-0014,BLIS,CCIS,4,studentSTU-0014@university.edu,3.3,1,3.6,2.7,3.6,3.3,4,1,3.6,3.9,3.5,3.5,3.8,3.8,3.7,4,2.9,3.1,2.3,3,3.1,3,1,8,2,yes,17337,91927,18,active
+STU-0006,Student STU-0006,BSA,CCIS,3,studentSTU-0006@university.edu,4,1,4,3.6,3,4,3.7,2,3.5,3.8,3.8,3.7,3.5,3.6,4,2.9,3.1,3.9,3,3.5,3,3.4,0,3,20,no,0,31178,23,active
+STU-0017,Student STU-0017,BSA,CCIS,3,studentSTU-0017@university.edu,3.9,1,3,4,3.1,3.4,3.6,4,4,3.7,3.7,3.2,3.9,3.9,3.9,3.6,3.6,2.6,3.4,3.4,3.8,4,0,10,12,yes,21532,98389,27,active
+STU-0043,Student STU-0043,BSA,CCIS,3,studentSTU-0043@university.edu,1.9,4,2.2,3.3,2.8,2.8,2.7,3,2.5,3.2,2.8,1.3,3.6,3.1,3,2.6,2,2.7,3.1,2.5,3,1.8,1,5,17,no,0,12246,16,active
+STU-0016,Student STU-0016,BSA,CCIS,1,studentSTU-0016@university.edu,3.3,3,3.4,4,3.4,3,3.6,4,3.9,3.3,3.9,3.3,4,2.9,3.6,3.6,3.9,3,3.5,3.3,2.7,3.7,0,7,6,yes,4575,46208,24,active
+STU-0009,Student STU-0009,BLIS,CCIS,4,studentSTU-0009@university.edu,3.6,4,4,3.9,3.4,3.2,3.7,3,2.9,2.8,3.8,3,3.3,3.7,3.4,3.3,3.4,2.8,4,2.8,2.7,3.8,0,9,19,no,0,68008,19,active
+STU-0002,Student STU-0002,BLIS,CCIS,2,studentSTU-0002@university.edu,3.1,4,3.9,3.2,3.3,3.2,4,2,4,3.5,2.8,3,4,3.5,3.8,3.2,3.3,3,3.7,3.7,3.2,2.6,0,10,2,no,0,60019,19,active
+STU-0012,Student STU-0012,BSA,CCIS,4,studentSTU-0012@university.edu,3.6,2,3.4,4,3.6,3.6,3.3,3,2.9,3.4,3.8,3.1,3.2,3.8,4,3.8,3.4,3.3,2.9,3.8,3,3.3,0,8,6,no,0,43862,10,active
+STU-0070,Student STU-0070,BSCS,CCIS,1,studentSTU-0070@university.edu,2.1,4,1.7,1,1,1.7,1.6,1,2.3,1,1.4,2.4,1.5,1.2,1,1.9,1.7,2,1,2.3,1.2,1.6,2,10,14,yes,40063,59774,24,active
+STU-0027,Student STU-0027,BLIS,CCIS,3,studentSTU-0027@university.edu,3,2,2.5,1.9,3.3,2.5,2.6,4,2.4,2.5,3.7,2.3,2.7,1.7,2.7,2.3,2.4,2.7,2.8,2.8,2.3,3.1,1,3,5,yes,45406,91885,25,active
+STU-0056,Student STU-0056,BSIT,CCIS,1,studentSTU-0056@university.edu,1.4,4,2.2,1,1.3,1.6,1.4,3,1.6,1.4,2.2,1,1.1,1.8,2.4,1.2,2.1,1.2,1.3,1.7,1.3,1.6,2,9,13,no,0,70091,23,active
+STU-0034,Student STU-0034,BLIS,CCIS,2,studentSTU-0034@university.edu,2.7,3,2.4,2.5,2.3,1.9,1.8,4,2.7,3.6,3.5,2.2,3,3.1,1.8,2.3,2.4,1.9,3.2,2.3,3,1.5,1,6,12,no,0,15930,12,active
+STU-0064,Student STU-0064,BLIS,CCIS,3,studentSTU-0064@university.edu,1.6,4,1.5,1.1,1.8,1.3,2.1,1,2.3,1.3,1.6,1.3,1.2,1.4,1.9,1.5,1.6,1,2.5,2.2,1.2,1.1,2,9,12,yes,34359,84537,0,active
+STU-0048,Student STU-0048,BSCS,CCIS,1,studentSTU-0048@university.edu,1.7,2,2.3,2.9,2.3,1.4,3.2,1,3.2,2.1,2.8,1.7,2.6,1.3,1.9,1.7,3.5,3.1,2.7,2.4,2.2,2.1,1,7,0,yes,29463,87621,13,active
+STU-0024,Student STU-0024,BSCS,CCIS,1,studentSTU-0024@university.edu,3.5,4,3.1,3.1,4,3.5,3.3,1,3.4,3.4,3.5,3,3.5,3.7,2.9,3.1,3,2.5,2.5,3.4,3.4,3.7,1,6,2,no,0,15544,13,active
+STU-0050,Student STU-0050,BSA,CCIS,4,studentSTU-0050@university.edu,2.4,4,1.8,2.4,1.9,2,2.8,4,1.9,2.6,2.6,2.1,2.8,2.4,3.2,3.1,2.2,3.2,3.8,2.7,2.4,2.7,1,3,19,yes,13541,37124,25,active
+STU-0029,Student STU-0029,BSCS,CCIS,3,studentSTU-0029@university.edu,2.2,3,2.9,3.2,2.7,2.1,1.7,4,1.8,1.6,2.9,1.8,3.1,2,1.7,2.6,2.1,2.6,3,2.5,2,2.4,1,7,11,no,0,12128,11,active
+STU-0057,Student STU-0057,BSCS,CCIS,2,studentSTU-0057@university.edu,1.5,1,2,1,1.7,2,1,1,1.5,1.3,1,1,1.7,1.4,1.4,1.6,1.8,1.7,1.4,1.8,2,1.7,2,7,14,yes,6207,70560,3,active
+STU-0062,Student STU-0062,BSIT,CCIS,4,studentSTU-0062@university.edu,1,2,1.9,2.1,1.7,1,1.5,4,1,1.2,1.8,1,1,1.5,1.2,1.7,1.1,1.7,1.5,1.2,1.8,1,2,2,2,no,0,80968,13,active
+ATR-ACADEMIC-05,Student ATR-ACADEMIC-05 (Academic Risk),BSCS,CCIS,2,studentATR-ACADEMIC-05@university.edu,1.2,1.1,1.4,1.3,1.3,1.2,1.2,1.1,1.4,1,1,1.1,1.1,1.1,1.4,1,1.4,2.3,2.4,2.6,2.8,2.3,2,4,0,no,0,99074,9,active
+ATR-ACADEMIC-01,Student ATR-ACADEMIC-01 (Academic Risk),BSCS,CCIS,1,studentATR-ACADEMIC-01@university.edu,1.3,1.2,1.1,1.3,1.1,1.3,1.4,1.1,1.2,1.2,1.2,1.1,1.2,1.4,1.3,1.4,1.4,2.5,2.3,2.4,2.8,2.2,2,2,2,no,0,56281,8,active
+STU-0039,Student STU-0039,BSA,CCIS,3,studentSTU-0039@university.edu,2.5,3,2.9,2.7,3,2.4,2.8,4,3.2,3.2,2.8,2.8,2.3,2.3,3.5,2.3,2.7,2.8,3.1,2.8,2.9,2,1,9,14,no,0,12853,12,active
+STU-0018,Student STU-0018,BLIS,CCIS,4,studentSTU-0018@university.edu,3.4,1,3.4,3,3.6,4,2.8,3,3.4,3.6,3,3.6,3.5,3.4,3.4,3.6,3.2,2.4,4,3.3,3.3,3.4,0,7,8,no,0,49599,6,active
+ATR-PERSONAL-02,Student ATR-PERSONAL-02 (Personal Risk),BSIT,CCIS,4,studentATR-PERSONAL-02@university.edu,2.8,1.9,2.6,2.7,1.8,1.7,1.1,1.1,1.5,1.2,1.9,1.3,1.9,1.4,1.7,1.7,2.3,2.6,2.1,1,1.3,1.3,2,3,3,no,0,23970,2,active
+STU-0038,Student STU-0038,BSA,CCIS,4,studentSTU-0038@university.edu,2.6,3,2.1,1.9,2.6,3.1,3.2,4,2.8,2.7,3,1.8,2.6,2.4,2.5,2.2,1.8,3.4,2.9,2.3,2.7,2.5,1,5,20,no,0,40972,1,active
+ATR-FINANCIAL-05,Student ATR-FINANCIAL-05 (Financial Risk),BSIT,CCIS,3,studentATR-FINANCIAL-05@university.edu,2.9,2,2.4,3,2.6,2.9,2.2,2.3,2.9,2.2,1.6,1.5,1.5,1.2,1.9,1.1,2.1,1.4,1,2.6,2.5,2.2,2,3,3,no,0,24547,9,active
+STU-0041,Student STU-0041,BSCS,CCIS,4,studentSTU-0041@university.edu,2.9,1,1.5,2.5,3.2,2.9,2.9,3,3,,,,,,,,,,,,,,,,,,,,,
+STU-0030,Student STU-0030,BLIS,CCIS,2,studentSTU-0030@university.edu,2.9,3,1.9,1,3.1,2.9,1.6,4,1.6,,,,,,,,,,,,,,,,,,,,,
+ATR-ACADEMIC-03,Student ATR-ACADEMIC-03 (Academic Risk),BSCS,CCIS,1,studentATR-ACADEMIC-03@university.edu,1.4,1.2,1.2,1.4,1.4,1.3,1.1,1.1,1.4,,,,,,,,,,,,,,,,,,,,,
+STU-0021,Student STU-0021,BLIS,CCIS,1,studentSTU-0021@university.edu,3.4,4,4,3.3,4,3.3,2.8,4,2.8,,,,,,,,,,,,,,,,,,,,,
+ATR-FINANCIAL-02,Student ATR-FINANCIAL-02 (Financial Risk),BSA,CCIS,1,studentATR-FINANCIAL-02@university.edu,2.4,2,2.7,2.8,2.8,2.6,1.7,2,2.4,,,,,,,,,,,,,,,,,,,,,
+STU-0010,Student STU-0010,BSA,CCIS,4,studentSTU-0010@university.edu,4,4,3.7,3.6,3.8,3.2,3.4,3,3.4,,,,,,,,,,,,,,,,,,,,,
+STU-0052,Student STU-0052,BLIS,CCIS,3,studentSTU-0052@university.edu,2,4,3.4,2,3.2,2.7,2.1,4,2.5,,,,,,,,,,,,,,,,,,,,,
+STU-0054,Student STU-0054,BSCS,CCIS,3,studentSTU-0054@university.edu,1.5,4,1.6,2.3,1.2,1,1,4,1.7,,,,,,,,,,,,,,,,,,,,,
+STU-0044,Student STU-0044,BSA,CCIS,2,studentSTU-0044@university.edu,1.5,2,2.4,2,2.1,2.9,2.6,3,3.2,,,,,,,,,,,,,,,,,,,,,
+STU-0022,Student STU-0022,BSCS,CCIS,1,studentSTU-0022@university.edu,3.8,1,3.2,3.8,4,3.4,3.5,4,3,,,,,,,,,,,,,,,,,,,,,
+STU-0019,Student STU-0019,BSA,CCIS,1,studentSTU-0019@university.edu,3.3,3,3.8,4,3.3,3.9,3.2,4,4,,,,,,,,,,,,,,,,,,,,,
+STU-0060,Student STU-0060,BSIT,CCIS,1,studentSTU-0060@university.edu,1,2,1.6,1.5,1.3,1.4,1,3,1.8,,,,,,,,,,,,,,,,,,,,,
+ATR-PERSONAL-03,Student ATR-PERSONAL-03 (Personal Risk),BSA,CCIS,3,studentATR-PERSONAL-03@university.edu,2.3,2,2.6,2.6,2,1.4,1.2,1.6,1.6,,,,,,,,,,,,,,,,,,,,,
+STU-0049,Student STU-0049,BSIT,CCIS,2,studentSTU-0049@university.edu,2.6,1,3.1,2.3,1.6,2.7,2.7,4,2.8,,,,,,,,,,,,,,,,,,,,,
+STU-0011,Student STU-0011,BSA,CCIS,2,studentSTU-0011@university.edu,4,3,4,3.2,3.8,2.9,3.3,3,3.6,,,,,,,,,,,,,,,,,,,,,
+STU-0058,Student STU-0058,BSIT,CCIS,1,studentSTU-0058@university.edu,1.4,2,1.5,1.5,1.7,1.6,1,4,1.3,,,,,,,,,,,,,,,,,,,,,
+STU-0063,Student STU-0063,BSIT,CCIS,1,studentSTU-0063@university.edu,2.2,4,2.2,2,1,1.8,1.1,2,1.4,,,,,,,,,,,,,,,,,,,,,
+STU-0066,Student STU-0066,BSA,CCIS,3,studentSTU-0066@university.edu,2.1,4,1,2.6,1.9,1.3,1.7,3,2.2,,,,,,,,,,,,,,,,,,,,,
+STU-0042,Student STU-0042,BSIT,CCIS,4,studentSTU-0042@university.edu,1.8,1,3.5,2.5,1.8,2.8,2.4,2,3.1,,,,,,,,,,,,,,,,,,,,,
+STU-0046,Student STU-0046,BSA,CCIS,4,studentSTU-0046@university.edu,2.6,1,2,2.2,2.1,2.1,2.7,2,2,,,,,,,,,,,,,,,,,,,,,
+STU-0037,Student STU-0037,BSA,CCIS,4,studentSTU-0037@university.edu,3.5,2,2,2.5,2.1,2,3.2,3,2.3,,,,,,,,,,,,,,,,,,,,,
+STU-0023,Student STU-0023,BSIT,CCIS,4,studentSTU-0023@university.edu,3.4,1,3.7,3,3.5,3.7,3.8,4,4,,,,,,,,,,,,,,,,,,,,,
+STU-0069,Student STU-0069,BSCS,CCIS,4,studentSTU-0069@university.edu,1.6,1,1.1,1.5,1,1,1.5,2,1.9,,,,,,,,,,,,,,,,,,,,,
+ATR-ACADEMIC-02,Student ATR-ACADEMIC-02 (Academic Risk),BSCS,CCIS,3,studentATR-ACADEMIC-02@university.edu,1.1,1,1.3,1.4,1,1.5,1.2,1.2,1.4,,,,,,,,,,,,,,,,,,,,,
+ATR-PERSONAL-01,Student ATR-PERSONAL-01 (Personal Risk),BSCS,CCIS,2,studentATR-PERSONAL-01@university.edu,2.4,1.6,2,2.5,1.9,1.7,1.8,1.6,1.2,,,,,,,,,,,,,,,,,,,,,
+ATR-ACADEMIC-04,Student ATR-ACADEMIC-04 (Academic Risk),BSIT,CCIS,4,studentATR-ACADEMIC-04@university.edu,1.3,1.2,1.3,1.1,1.3,1.1,1.2,1.3,1.2,,,,,,,,,,,,,,,,,,,,,
+STU-0074,Student STU-0074,BSCS,CCIS,3,studentSTU-0074@university.edu,1.7,4,2,2,1,1,1,3,1.3,,,,,,,,,,,,,,,,,,,,,
+STU-0026,Student STU-0026,BSCS,CCIS,4,studentSTU-0026@university.edu,3.2,3,3.4,3,2.9,3.4,3.6,4,3.5,,,,,,,,,,,,,,,,,,,,,

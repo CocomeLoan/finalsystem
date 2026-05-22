@@ -1,0 +1,31 @@
+student_id,name,course,department,year,email,academic_consistency,gpa_trend,subject_mastery_level,exam_performance_consistency,study_habits_consistency,lms_engagement_level,assignment_completion_rate,self_learning_initiative,class_participation,responsiveness_to_feedback,consultation_frequency,group_study_participation,peer_collaboration_quality,academic_peer_environment_strength,adaptation_to_course_difficulty,engagement_in_program_activities,skill_development_alignment,financial_stability,scholarship_support_level,motivation_level,stress_level,time_management_skills,risk_label,study_hours,library_visits,scholarship,scholarship_amount,family_income,lms_login_per_month,status
+STU-0013,Student STU-0013,BLIS,CCIS,1,studentSTU-0013@university.edu,1,2,3.7,3.9,3.6,3.4,3.4,3,3.5,3.4,4,3.3,3,3.5,4,3.4,3.5,3.6,3.9,3.6,3.5,3.5,0,9,9,yes,41803,74340,3,active
+STU-0015,Student STU-0015,BSIT,CCIS,4,studentSTU-0015@university.edu,2.8,2,4,2.7,3.6,3.4,3.3,4,3.9,3.1,3,3.1,3.6,3.9,4,3.4,3.3,3.4,3.6,3.7,3.3,2.9,0,2,5,no,0,63955,22,active
+ATR-PERSONAL-04,Student ATR-PERSONAL-04 (Personal Risk),BSCS,CCIS,2,studentATR-PERSONAL-04@university.edu,2.4,2.1,2.8,2.8,1.5,1.6,1.1,1.3,1.4,1.6,1.7,1.9,1.4,1.7,1.8,2,1.6,2.8,2.2,1.2,1,1.4,2,5,2,yes,2202,88579,8,active
+STU-0032,Student STU-0032,BSA,CCIS,2,studentSTU-0032@university.edu,2.7,4,2.5,3.5,3.7,3,2.2,3,3.2,3.1,2.8,1.6,2.6,2.1,2.9,2.7,1.8,3.7,3.1,2.1,2,2.6,1,6,4,yes,8456,66704,16,active
+STU-0072,Student STU-0072,BSA,CCIS,1,studentSTU-0072@university.edu,1,1,2.2,2.1,2,1.6,1.7,2,1.6,1.9,1.6,1,1.1,1.5,1.9,1,1.9,2.5,1.4,1,1.1,1.6,2,6,3,no,0,16094,29,active
+STU-0036,Student STU-0036,BSIT,CCIS,1,studentSTU-0036@university.edu,2.1,4,2.4,2.7,1.3,1.8,2.5,4,3.3,1.5,1.9,2.7,1.8,2.7,2.8,3,2.9,2,2.6,2.6,2.7,2.5,1,6,17,no,0,47721,3,active
+STU-0068,Student STU-0068,BSIT,CCIS,2,studentSTU-0068@university.edu,1.8,1,1,1.3,1,1.8,2.4,2,1,1.4,1.7,1.1,1,1.6,1.5,1.4,1.2,2.5,1.8,2.3,2,1.8,2,1,18,yes,8071,58049,22,active
+STU-0065,Student STU-0065,BSIT,CCIS,1,studentSTU-0065@university.edu,1.2,3,1.4,1.8,1.2,1,1.2,4,1.4,1.6,2,1.1,1.2,2.4,1.9,1.2,1.4,1.7,2.5,1,1.7,1.6,2,5,13,no,0,55706,14,active
+STU-0040,Student STU-0040,BSCS,CCIS,2,studentSTU-0040@university.edu,1.9,3,2.8,2.7,2.9,1.8,2.4,4,3,3.1,1.7,3.6,2.7,2.9,1.8,3.5,3.5,2.9,2.5,2.2,2.8,2.8,1,1,13,yes,15772,37011,2,active
+STU-0001,Student STU-0001,BSCS,CCIS,1,studentSTU-0001@university.edu,3.5,2,3.9,3.5,3,3.2,2.7,4,3.3,3.3,4,3,3.8,2.7,4,4,4,3.1,3.9,3.9,2.9,2.8,0,2,7,yes,24911,46434,14,active
+STU-0047,Student STU-0047,BSA,CCIS,2,studentSTU-0047@university.edu,2,4,3.1,3,2.6,2.4,2.5,3,2.1,3.3,2.1,1.9,2,2.3,2.7,3.2,2.7,2.5,3.4,3.3,2.9,2.5,1,10,1,no,0,53463,30,active
+STU-0028,Student STU-0028,BSA,CCIS,1,studentSTU-0028@university.edu,2.7,2,3.1,3.2,1.8,3.4,2.4,4,2.1,2.4,3.5,2.2,2.5,3,2.7,2.5,2.4,3,3.1,2.1,2.7,1.3,1,4,12,yes,24570,39430,0,active
+STU-0073,Student STU-0073,BSCS,CCIS,4,studentSTU-0073@university.edu,1.6,2,1.4,1.8,1.5,2.3,2.1,2,1.3,1.5,1.9,2,2.2,1.8,1.9,1,2,1.6,2.5,2.1,1.8,1.4,2,3,20,yes,33023,81105,22,active
+STU-0075,Student STU-0075,BSIT,CCIS,2,studentSTU-0075@university.edu,1,1,1,1.4,1.5,1.2,1.1,2,1.6,1.9,2,1.6,1,1.7,2,1.4,1.4,1.9,1.8,1.8,1.4,1.5,2,1,3,no,0,68414,7,active
+STU-0061,Student STU-0061,BSIT,CCIS,1,studentSTU-0061@university.edu,1.5,1,1.8,1.6,1.3,2.1,1.2,2,1.5,2.1,1,1,1.9,1.2,2.2,1.9,1.2,1.7,1,1,1.1,1,2,2,10,no,0,14062,13,active
+STU-0055,Student STU-0055,BSA,CCIS,3,studentSTU-0055@university.edu,1.9,3,1,1.5,2.2,1.4,1,1,1.5,1.5,1,2.2,1.2,1.1,1.3,1,1.5,2,2.4,1.3,1.8,1.7,2,10,11,yes,32901,98254,28,active
+STU-0076,Student STU-0076,BSIT,CCIS,1,studentSTU-0076@university.edu,1.5,1,1.4,1.8,1.7,1.7,1.5,2,1,1.7,1.8,1.3,1.3,2.1,1.6,2.2,1.8,1.3,1.3,1,1.8,1,2,5,13,no,0,69129,20,active
+ATR-FINANCIAL-03,Student ATR-FINANCIAL-03 (Financial Risk),BSA,CCIS,4,studentATR-FINANCIAL-03@university.edu,2.9,1.5,2.6,2.1,3,2.6,1.8,2.2,2.6,2.6,1.4,1.4,1.6,1.9,1.6,1.3,2.5,1.1,1,2.4,2.8,2.3,2,4,4,no,0,5216,8,active
+STU-0008,Student STU-0008,BSCS,CCIS,3,studentSTU-0008@university.edu,3.4,3,3.6,3.6,3.7,3,3.5,1,3.5,3.5,3.4,3.8,3.9,2.9,3.5,3.7,3.5,2.9,2.9,3,2.6,4,1,5,12,yes,19914,47606,6,active
+STU-0071,Student STU-0071,BSCS,CCIS,2,studentSTU-0071@university.edu,1.5,4,1,1.1,1.9,2,1.8,3,1.7,1.5,1.7,1.8,1.5,2,1.5,1.5,1.1,1.9,1.3,1.6,1.6,1.3,2,10,14,yes,32666,68598,10,active
+STU-0067,Student STU-0067,BSIT,CCIS,3,studentSTU-0067@university.edu,1,3,1.8,2.4,2.1,1,1.8,3,1.5,1,1.2,1.7,1.1,1.3,1.4,1.5,1.8,2.9,2.1,1.5,1.9,1.9,2,1,0,no,0,45851,6,active
+ATR-PERSONAL-05,Student ATR-PERSONAL-05 (Personal Risk),BSIT,CCIS,2,studentATR-PERSONAL-05@university.edu,2.7,1.9,2.7,3,1.1,1.3,1.4,1.7,1.4,1.2,1,1.7,1.9,1.5,2.2,1.6,2.1,2.3,2.8,1.1,1.5,1.2,2,4,4,yes,17111,32942,6,active
+ATR-FINANCIAL-01,Student ATR-FINANCIAL-01 (Financial Risk),BSCS,CCIS,3,studentATR-FINANCIAL-01@university.edu,2.9,1.6,2.5,2.3,2.9,2.1,1.6,1.5,2.5,2,1.6,1.4,1.6,1.9,2.1,1.5,2.5,1.2,1,2.8,2.4,2.2,2,5,5,no,0,14535,2,active
+STU-0035,Student STU-0035,BSIT,CCIS,3,studentSTU-0035@university.edu,1.9,4,2.4,3.3,2.9,2.9,3,2,2.2,1.8,1.9,2.4,2.6,2.5,2.9,2.4,2.9,3,2.8,2.6,2,3.1,1,1,19,no,0,44803,30,active
+STU-0020,Student STU-0020,BSCS,CCIS,4,studentSTU-0020@university.edu,3.6,2,4,4,3.7,3.3,3.5,3,3.9,3.5,2.8,3.9,3.6,3.4,3.7,3,3.8,2.8,3.5,3.6,2.9,3.9,0,3,13,yes,32069,90694,13,active
+STU-0045,Student STU-0045,BSIT,CCIS,4,studentSTU-0045@university.edu,3,2,3.1,2.7,2.8,3.1,2.5,3,2,2.6,3.5,2.8,1.7,3,3.1,2.7,2,3.2,2.7,2.5,2.4,2.4,1,8,11,no,0,23399,4,active
+STU-0033,Student STU-0033,BSCS,CCIS,1,studentSTU-0033@university.edu,2.2,2,2.7,3.1,3.4,2.5,2,3,2,2.8,2.1,3.3,3,2.6,2.8,2.4,2.3,2.5,3.4,2.3,2.8,2.7,1,1,5,no,0,64476,15,active
+STU-0003,Student STU-0003,BLIS,CCIS,1,studentSTU-0003@university.edu,3.3,3,3.6,3,3.2,4,3.8,1,3.7,3.7,3.4,3.8,3,2.8,4,3.6,3.4,3.5,2.8,4,3.8,3.5,0,10,13,yes,35343,36365,22,active
+STU-0051,Student STU-0051,BLIS,CCIS,3,studentSTU-0051@university.edu,2.1,3,1.9,3.6,2,3.4,3.7,2,2.1,1.9,2.8,1.8,2.8,1.7,3.2,2.8,3.3,2.7,3.2,2.2,2,3,1,9,12,yes,28157,37767,15,active
+STU-0077,Student STU-0077,BLIS,CCIS,1,studentSTU-0077@university.edu,1,1,1.8,1.9,1.2,1.5,1.5,1,1.8,1.8,1,1.5,2.2,1.5,1.8,2.4,2.2,1.4,1,1.4,1.5,1,2,6,6,no,0,94663,27,active

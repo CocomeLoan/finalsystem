@@ -6,9 +6,9 @@
       "type": "string",
       "description": "Student ID"
     },
-    "student_name": {
+    "name": {
       "type": "string",
-      "description": "Student name"
+      "description": "Student full name"
     },
     "department": {
       "type": "string",

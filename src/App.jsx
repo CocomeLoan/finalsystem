@@ -28,6 +28,7 @@ import StudentDashboard from '@/pages/student/StudentDashboard';
 import StudentGrades from '@/pages/student/StudentGrades';
 import StudentPrediction from '@/pages/student/StudentPrediction';
 import StudentConcerns from '@/pages/student/StudentConcerns';
+import Settings from '@/pages/Settings';
 
 const ROLE_DEFAULTS = {
   admin: '/admin',
@@ -92,6 +93,7 @@ const AppRoutes = () => {
         <Route path="/admin/reports" element={<ReportsPage />} />
         <Route path="/admin/training-logs" element={<TrainingLogsPage />} />
         <Route path="/admin/prediction-logs" element={<PredictionLogsPage />} />
+        <Route path="/admin/settings" element={<Settings />} />
       </Route>
 
       {/* Dean Routes */}
@@ -104,6 +106,7 @@ const AppRoutes = () => {
         <Route path="/dean/concerns" element={<DeanConcerns />} />
         <Route path="/dean/training-logs" element={<TrainingLogsPage />} />
         <Route path="/dean/prediction-logs" element={<PredictionLogsPage />} />
+        <Route path="/dean/settings" element={<Settings />} />
       </Route>
 
       {/* Developer Routes */}
@@ -111,6 +114,7 @@ const AppRoutes = () => {
         <Route path="/developer" element={<DeveloperDashboard />} />
         <Route path="/developer/users" element={<UserManagement />} />
         <Route path="/developer/stats" element={<SystemStats />} />
+        <Route path="/developer/settings" element={<Settings />} />
       </Route>
 
       {/* Student Routes */}
@@ -119,6 +123,7 @@ const AppRoutes = () => {
         <Route path="/student/grades" element={<StudentGrades />} />
         <Route path="/student/prediction" element={<StudentPrediction />} />
         <Route path="/student/concerns" element={<StudentConcerns />} />
+        <Route path="/student/settings" element={<Settings />} />
       </Route>
 
       <Route path="*" element={<PageNotFound />} />

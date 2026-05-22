@@ -5,10 +5,11 @@ import { usePortalAuth } from '@/lib/PortalAuthContext';
 import PageHeader from '@/components/shared/PageHeader';
 import DataTable from '@/components/shared/DataTable';
 import StudentFormModal from '@/components/students/StudentFormModal';
+import CsvImportModal from '@/components/students/CsvImportModal';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Plus, Pencil, Trash2 } from 'lucide-react';
+import { Plus, Upload, Pencil, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
@@ -23,6 +24,7 @@ export default function DeanStudents() {
   const [courseFilter, setCourseFilter] = useState('');
   const [yearFilter, setYearFilter] = useState('');
   const [formOpen, setFormOpen] = useState(false);
+  const [csvOpen, setCsvOpen] = useState(false);
   const [editing, setEditing] = useState(null);
   const [deleting, setDeleting] = useState(null);
 
@@ -34,20 +36,23 @@ export default function DeanStudents() {
   const filtered = students.filter(s => {
     if (isCCIS && !DEAN_CCIS_COURSES.includes(s.course)) return false;
     if (courseFilter && s.course !== courseFilter) return false;
-    if (yearFilter && s.year !== parseInt(yearFilter)) return false;
+    if (yearFilter && s.year_level !== parseInt(yearFilter)) return false;
     return true;
   });
 
   const availableCourses = isCCIS
     ? DEAN_CCIS_COURSES
     : [...new Set(students.map(s => s.course))].filter(Boolean);
-  const availableYears = [...new Set(filtered.map(s => s.year))].filter(Boolean).sort();
+  const availableYears = [...new Set(filtered.map(s => s.year_level))].filter(Boolean).sort();
 
   const columns = [
     { key: 'student_id', label: 'Student ID' },
-    { key: 'name', label: 'Name' },
+    { key: 'full_name', label: 'Name' },
     { key: 'course', label: 'Course' },
-    { key: 'year', label: 'Year' },
+    { key: 'year_level', label: 'Year' },
+    { key: 'concerns', label: 'Concerns', render: (row) => (
+      <span className="text-sm text-muted-foreground truncate max-w-[150px]">{row.concerns || '—'}</span>
+    )},
     { key: 'status', label: 'Status', render: (row) => (
       <Badge variant={row.status === 'active' ? 'default' : 'secondary'} className="text-xs">
         {row.status || 'active'}
@@ -71,9 +76,14 @@ export default function DeanStudents() {
         title="Student Management"
         description={isCCIS ? 'Department: CCIS (BSCS, BSIT, BLIS)' : 'Manage all student records'}
         actions={
-          <Button onClick={() => { setEditing(null); setFormOpen(true); }}>
-            <Plus className="w-4 h-4 mr-2" />Add Student
-          </Button>
+          <div className="flex gap-2">
+            <Button variant="outline" onClick={() => setCsvOpen(true)}>
+              <Upload className="w-4 h-4 mr-2" />Import CSV
+            </Button>
+            <Button onClick={() => { setEditing(null); setFormOpen(true); }}>
+              <Plus className="w-4 h-4 mr-2" />Add Student
+            </Button>
+          </div>
         }
       />
 
@@ -102,7 +112,7 @@ export default function DeanStudents() {
         </Select>
       </div>
 
-      <DataTable columns={columns} data={filtered} searchField="name" />
+      <DataTable columns={columns} data={filtered} searchField="full_name" onRowClick={() => {}} />
 
       <StudentFormModal
         open={formOpen}
@@ -118,6 +128,15 @@ export default function DeanStudents() {
           toast.success(editing ? 'Student updated' : 'Student added');
         }}
         student={editing}
+      />
+
+      <CsvImportModal
+        open={csvOpen}
+        onClose={() => setCsvOpen(false)}
+        onComplete={() => {
+          setCsvOpen(false);
+          toast.success('CSV import completed');
+        }}
       />
 
       <AlertDialog open={!!deleting} onOpenChange={() => setDeleting(null)}>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { 
-  LayoutDashboard, Users, GraduationCap, Brain, BarChart3, 
+import {
+  LayoutDashboard, Users, GraduationCap, Brain, BarChart3,
   MessageSquare, LogOut, FileText, Database,
-  ChevronLeft, ChevronRight, ScrollText, ClipboardList
+  ChevronLeft, ChevronRight, ScrollText, ClipboardList, Settings as SettingsIcon
 } from 'lucide-react';
 import { usePortalAuth } from '@/lib/PortalAuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -20,6 +20,7 @@ const roleMenus = {
     { label: 'Prediction Logs', icon: ClipboardList, path: '/admin/prediction-logs' },
     { label: 'Concerns', icon: MessageSquare, path: '/admin/concerns' },
     { label: 'Reports', icon: FileText, path: '/admin/reports' },
+    { label: 'Settings', icon: SettingsIcon, path: '/admin/settings' },
   ],
   dean: [
     { label: 'Dashboard', icon: LayoutDashboard, path: '/dean' },
@@ -30,17 +31,20 @@ const roleMenus = {
     { label: 'Training Logs', icon: ScrollText, path: '/dean/training-logs' },
     { label: 'Prediction Logs', icon: ClipboardList, path: '/dean/prediction-logs' },
     { label: 'Concerns', icon: MessageSquare, path: '/dean/concerns' },
+    { label: 'Settings', icon: SettingsIcon, path: '/dean/settings' },
   ],
   developer: [
     { label: 'Dashboard', icon: LayoutDashboard, path: '/developer' },
     { label: 'User Management', icon: Users, path: '/developer/users' },
     { label: 'System Stats', icon: BarChart3, path: '/developer/stats' },
+    { label: 'Settings', icon: SettingsIcon, path: '/developer/settings' },
   ],
   student: [
     { label: 'Dashboard', icon: LayoutDashboard, path: '/student' },
     { label: 'My Grades', icon: FileText, path: '/student/grades' },
     { label: 'My Prediction', icon: Brain, path: '/student/prediction' },
     { label: 'Submit Concern', icon: MessageSquare, path: '/student/concerns' },
+    { label: 'Settings', icon: SettingsIcon, path: '/student/settings' },
   ],
 };
 

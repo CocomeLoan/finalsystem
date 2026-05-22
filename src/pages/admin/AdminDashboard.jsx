@@ -14,9 +14,18 @@ export default function AdminDashboard() {
   const { data: concerns = [] } = useQuery({ queryKey: ['concerns'], queryFn: () => base44.entities.Concern.list() });
   const { data: trainingLogs = [] } = useQuery({ queryKey: ['trainingLogs'], queryFn: () => base44.entities.TrainingLog.list() });
 
-  const atRisk = predictions.filter(p => p.result === 'At-Risk').length;
-  const goodStanding = predictions.filter(p => p.result === 'Good Standing').length;
-  const pendingConcerns = concerns.filter(c => c.status === 'pending').length;
+  const atRisk = predictions.filter(p => {
+    const result = p.result?.toLowerCase() || '';
+    return result.includes('at-risk') || result.includes('at risk') || result === 'atrisk';
+  }).length;
+  const goodStanding = predictions.filter(p => {
+    const result = p.result?.toLowerCase() || '';
+    return result.includes('good standing');
+  }).length;
+  const pendingConcerns = concerns.filter(c => {
+    const status = c.status?.toLowerCase() || '';
+    return status !== 'resolved';
+  }).length;
 
   const deptData = students.reduce((acc, s) => {
     const dept = s.department || 'Unknown';
@@ -29,7 +38,7 @@ export default function AdminDashboard() {
     { name: 'Good Standing', value: goodStanding },
     { name: 'At-Risk', value: atRisk },
   ];
-  const COLORS = ['hsl(160, 60%, 45%)', 'hsl(0, 84%, 60%)'];
+  const COLORS = ['hsl(142, 70%, 50%)', 'hsl(0, 84%, 60%)'];
 
   return (
     <div>
@@ -111,7 +120,7 @@ export default function AdminDashboard() {
                   <div key={c.id} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
                     <MessageSquare className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium">{c.student_name || c.student_id}</p>
+                      <p className="text-sm font-medium">{c.name || c.student_id}</p>
                       <p className="text-sm text-muted-foreground truncate">{c.message}</p>
                     </div>
                     <Badge variant={c.status === 'pending' ? 'destructive' : 'secondary'} className="flex-shrink-0 text-xs">

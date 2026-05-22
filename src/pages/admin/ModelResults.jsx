@@ -6,6 +6,35 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Legend, LineChart, Line } from 'recharts';
+import { Info } from 'lucide-react';
+
+const METRIC_EXPLANATIONS = {
+  accuracy: {
+    title: 'Accuracy',
+    explanation: 'Ratio of correctly predicted observations to total observations. Calculated as (TP + TN) / (TP + TN + FP + FN). Measures overall model correctness across all classes.',
+    interpretation: 'Higher values indicate better overall classification performance. Values near 1.0 suggest the model correctly classifies most instances.'
+  },
+  precision: {
+    title: 'Precision',
+    explanation: 'Ratio of correctly predicted positive observations to total predicted positive observations. Calculated as TP / (TP + FP). Measures how many selected items are relevant.',
+    interpretation: 'Higher values indicate fewer false positives. Critical when minimizing false alarms is important (e.g., avoiding mislabeling low-risk students as high-risk).'
+  },
+  recall: {
+    title: 'Recall (Sensitivity)',
+    explanation: 'Ratio of correctly predicted positive observations to all actual positive observations. Calculated as TP / (TP + FN). Measures ability to find all positive samples.',
+    interpretation: 'Higher values indicate fewer false negatives. Critical when missing positive cases is costly (e.g., failing to identify at-risk students).'
+  },
+  f1_score: {
+    title: 'F1 Score',
+    explanation: 'Harmonic mean of Precision and Recall. Calculated as 2 × (Precision × Recall) / (Precision + Recall). Balances both metrics when class distribution is imbalanced.',
+    interpretation: 'Higher values indicate better balance between precision and recall. Useful when you need to consider both false positives and false negatives equally.'
+  },
+  roc_auc: {
+    title: 'ROC AUC',
+    explanation: 'Area Under the Receiver Operating Characteristic Curve. Measures the model\'s ability to distinguish between classes across different threshold settings. Based on True Positive Rate vs False Positive Rate.',
+    interpretation: 'Values range from 0.5 (random guessing) to 1.0 (perfect classification). Higher values indicate better discriminative ability across all classification thresholds.'
+  }
+};
 
 export default function ModelResults() {
   const { data: logs = [] } = useQuery({ 
@@ -131,6 +160,24 @@ export default function ModelResults() {
               ))}
             </TableBody>
           </Table>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle className="text-base">Metric Explanations</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {Object.entries(METRIC_EXPLANATIONS).map(([key, info]) => (
+            <div key={key} className="p-4 rounded-lg bg-muted/50 space-y-2">
+              <div className="flex items-center gap-2">
+                <Info className="w-4 h-4 text-primary" />
+                <h4 className="font-semibold text-sm">{info.title}</h4>
+              </div>
+              <p className="text-xs text-muted-foreground">{info.explanation}</p>
+              <p className="text-xs text-muted-foreground italic">{info.interpretation}</p>
+            </div>
+          ))}
         </CardContent>
       </Card>
 

@@ -6,93 +6,71 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { Brain, AlertTriangle, CheckCircle, Loader2, Lock, Users, TrendingUp } from 'lucide-react';
+import { Brain, AlertTriangle, CheckCircle, Loader2, Lock, Users, TrendingUp, DollarSign, User, BookOpen } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from 'sonner';
 import { getGradeLabel, getLatestGPA } from '@/utils/grading';
+import { analyzeFinancialRisk, analyzePersonalRisk, analyzeAcademicRisk, calculateOverallRisk } from '@/lib/enhancedPrediction';
+import { generateExplanationAndRecommendations } from '@/lib/llmService';
 
-// Mock prediction engine — no LLM calls
-function mockPredict(student, studentGrades, type) {
-  const gpaHistory = student.gpa_history || [];
-  const latestGpa = gpaHistory.length > 0 ? gpaHistory[gpaHistory.length - 1]?.gpa : null;
-  const avgGpa = gpaHistory.length > 0
-    ? gpaHistory.reduce((s, h) => s + (h.gpa || 0), 0) / gpaHistory.length
-    : null;
+// Enhanced prediction engine with categorized risk analysis
+async function enhancedPredict(student, studentGrades, type) {
+  // Analyze each category
+  const financial = analyzeFinancialRisk(student);
+  const personal = analyzePersonalRisk(student);
+  const academic = analyzeAcademicRisk(student, studentGrades);
 
-  const studyHours = student.study_hours || 0;
-  const libraryVisits = student.library_visits || 0;
-  const lmsLogins = student.lms_login_per_month || 0;
-  const hasScholarship = student.scholarship === 'yes';
-  const familyIncome = student.family_income || 0;
+  // Calculate overall risk
+  const overallRisk = calculateOverallRisk(financial, personal, academic);
 
-  // Scoring: lower is better (Philippine scale 1.0–5.0)
-  let riskScore = 0;
-  if (latestGpa !== null) {
-    if (latestGpa > 3.00) riskScore += 3;
-    else if (latestGpa > 2.50) riskScore += 1;
-  } else {
-    riskScore += 1; // no data = slight risk
-  }
-  if (studyHours < 2) riskScore += 1;
-  if (lmsLogins < 5) riskScore += 1;
-  if (libraryVisits < 1) riskScore += 0.5;
-  if (familyIncome > 0 && familyIncome < 10000) riskScore += 0.5;
+  // Generate LLM-powered explanation and recommendations
+  const { explanation, recommendations } = await generateExplanationAndRecommendations(
+    { ...overallRisk, financial, personal, academic },
+    student
+  );
 
-  // Advanced: check for failing subjects (grade > 3.0)
-  if (type === 'advanced' && studentGrades.length > 0) {
-    const failingCount = studentGrades.filter(g => g.grade > 3.0).length;
-    riskScore += failingCount * 1.5;
-  }
-
-  const result = riskScore >= 3 ? 'At-Risk' : 'Good Standing';
-  const confidence = result === 'Good Standing'
+  const confidence = overallRisk.overallResult === 'Good Standing'
     ? +(0.70 + Math.random() * 0.25).toFixed(2)
     : +(0.65 + Math.random() * 0.30).toFixed(2);
 
-  const strengths = [];
-  const weaknesses = [];
+  // Build strengths and weaknesses from personal analysis
+  const strengths = personal.strengths.map(s => s.name);
+  const weaknesses = personal.weaknesses.map(w => w.name);
 
-  if (latestGpa !== null && latestGpa <= 1.75) strengths.push('Excellent GPA performance');
-  else if (latestGpa !== null && latestGpa <= 2.50) strengths.push('Good academic standing');
-  if (studyHours >= 3) strengths.push('Consistent study habits');
-  if (lmsLogins >= 10) strengths.push('High LMS engagement');
-  if (libraryVisits >= 2) strengths.push('Regular library utilization');
-  if (hasScholarship) strengths.push('Financial support through scholarship');
+  // Add category-specific strengths/weaknesses
+  if (!financial.isAtRisk) strengths.push('Financial stability');
+  else weaknesses.push('Financial constraints');
 
-  if (latestGpa !== null && latestGpa > 3.00) weaknesses.push('GPA below passing threshold');
-  else if (latestGpa !== null && latestGpa > 2.50) weaknesses.push('GPA approaching risk zone');
-  if (studyHours < 2) weaknesses.push('Insufficient study hours per day');
-  if (lmsLogins < 5) weaknesses.push('Low LMS platform engagement');
-  if (libraryVisits < 1) weaknesses.push('Minimal library visits');
-  if (familyIncome > 0 && familyIncome < 10000) weaknesses.push('Low family income may affect resources');
-
-  const recommendations = result === 'At-Risk' ? [
-    'Enroll in academic tutoring or peer study groups',
-    'Increase daily study hours to at least 3–4 hours',
-    'Meet with academic adviser for a study improvement plan',
-    'Utilize library and LMS resources more consistently',
-  ] : [
-    'Maintain current academic performance',
-    'Consider joining honor societies or academic competitions',
-    'Explore leadership roles in student organizations',
-  ];
-
-  const explanation = result === 'Good Standing'
-    ? `${student.name} is classified as Good Standing based on a GPA of ${latestGpa ?? 'N/A'}, study habits, and engagement metrics. Risk score: ${riskScore.toFixed(1)}.`
-    : `${student.name} is classified as At-Risk. Key factors include GPA of ${latestGpa ?? 'N/A'} and low engagement indicators. Risk score: ${riskScore.toFixed(1)}.`;
+  if (!academic.isAtRisk) strengths.push('Good academic performance');
+  // Only add academic performance concerns if GPA is actually below threshold
+  // Don't add if student just hasn't completed enough semesters yet
+  if (academic.isAtRisk && academic.factors.avgGpa !== null && academic.factors.avgGpa > 2.5) {
+    weaknesses.push('Academic performance concerns');
+  }
 
   const feature_importance = [
-    { feature: 'GPA History', importance: +(0.30 + Math.random() * 0.15).toFixed(3) },
-    { feature: 'Study Hours', importance: +(0.15 + Math.random() * 0.10).toFixed(3) },
-    { feature: 'LMS Logins', importance: +(0.12 + Math.random() * 0.08).toFixed(3) },
-    { feature: 'Library Visits', importance: +(0.08 + Math.random() * 0.06).toFixed(3) },
-    { feature: 'Family Income', importance: +(0.05 + Math.random() * 0.05).toFixed(3) },
-    { feature: 'Scholarship', importance: +(0.04 + Math.random() * 0.04).toFixed(3) },
+    { feature: 'Financial Status', importance: financial.isAtRisk ? 0.25 : 0.05 },
+    { feature: 'Personal Factors', importance: personal.isAtRisk ? 0.35 : 0.15 },
+    { feature: 'Academic Performance', importance: academic.isAtRisk ? 0.40 : 0.20 },
   ];
 
-  return { result, confidence, strengths, weaknesses, explanation, recommendations, feature_importance };
+  return {
+    result: overallRisk.overallResult,
+    confidence,
+    strengths,
+    weaknesses,
+    explanation,
+    recommendations,
+    feature_importance,
+    categorizedRisk: {
+      financial,
+      personal,
+      academic,
+      overallRisk
+    }
+  };
 }
 
 export default function PredictionPage({ departmentFilter, courseFilter }) {
@@ -130,23 +108,44 @@ export default function PredictionPage({ departmentFilter, courseFilter }) {
     : students;
 
   const hasTrained = trainingLogs.some(t => t.is_best);
-  const bestModel = trainingLogs.find(t => t.is_best);
+  // Get best model from most recent training session
+  const sortedLogs = [...trainingLogs].sort((a, b) => {
+    const dateA = new Date(a.created_at || 0).getTime();
+    const dateB = new Date(b.created_at || 0).getTime();
+    return dateB - dateA;
+  });
+  const latestSession = sortedLogs.length > 0 ? sortedLogs[0]?.training_session_id : null;
+  const sessionLogs = sortedLogs.filter(l => l.training_session_id === latestSession);
+  const bestModel = sessionLogs.find(l => l.is_best);
 
   const savePrediction = async (student, prediction) => {
-    await base44.entities.Prediction.create({
-      student_id: student.student_id,
-      student_name: student.name,
-      department: student.department,
-      result: prediction.result,
-      confidence: prediction.confidence,
-      model_used: bestModel?.algorithm || 'AI Analysis',
-      strengths: prediction.strengths || [],
-      weaknesses: prediction.weaknesses || [],
-      explanation: prediction.explanation || '',
-      recommendations: prediction.recommendations || [],
-      feature_importance: prediction.feature_importance || [],
-      prediction_type: predictionType,
-    });
+    try {
+      await base44.entities.Prediction.create({
+        student_id: student.student_id,
+        student_name: student.name || student.full_name || student.student_id,
+        department: student.department,
+        result: prediction.result,
+        confidence: prediction.confidence,
+        model_used: bestModel?.algorithm || 'AI Analysis',
+        strengths: prediction.strengths || [],
+        weaknesses: prediction.weaknesses || [],
+        explanation: prediction.explanation || '',
+        recommendations: prediction.recommendations || [],
+        feature_importance: prediction.feature_importance || [],
+        prediction_type: predictionType,
+        financial_risk: prediction.categorizedRisk?.financial || {},
+        personal_risk: prediction.categorizedRisk?.personal || {},
+        academic_risk: prediction.categorizedRisk?.academic || {},
+        overall_risk_score: prediction.categorizedRisk?.overallRisk?.totalRiskScore || 0,
+        risk_percentage: prediction.categorizedRisk?.overallRisk?.riskPercentage || 0,
+        llm_explanation: prediction.explanation || '',
+        llm_recommendations: prediction.recommendations || [],
+      });
+    } catch (error) {
+      console.error('Save prediction error:', error);
+      console.error('Error details:', error.response?.data || error.message);
+      throw error;
+    }
   };
 
   const predictMutation = useMutation({
@@ -155,7 +154,7 @@ export default function PredictionPage({ departmentFilter, courseFilter }) {
       if (!student) throw new Error('Student not found');
       const studentGrades = grades.filter(g => g.student_id === student.student_id);
 
-      const prediction = mockPredict(student, studentGrades, predictionType);
+      const prediction = await enhancedPredict(student, studentGrades, predictionType);
       await savePrediction(student, prediction);
       setResult({ ...prediction, student });
       qc.invalidateQueries({ queryKey: ['predictions'] });
@@ -179,12 +178,14 @@ export default function PredictionPage({ departmentFilter, courseFilter }) {
         const batch = toPredict.slice(i, i + BATCH_SIZE);
         setBulkCurrent(`${Math.min(i + BATCH_SIZE, toPredict.length)} of ${toPredict.length}`);
 
-        // Run batch — mock is synchronous so all instant
-        const batchResults = batch.map((student) => {
-          const studentGrades = grades.filter(g => g.student_id === student.student_id);
-          const prediction = mockPredict(student, studentGrades, predictionType);
-          return { student, prediction };
-        });
+        // Run batch predictions in parallel (async)
+        const batchResults = await Promise.all(
+          batch.map(async (student) => {
+            const studentGrades = grades.filter(g => g.student_id === student.student_id);
+            const prediction = await enhancedPredict(student, studentGrades, predictionType);
+            return { student, prediction };
+          })
+        );
 
         // Save batch results in parallel
         await Promise.all(
@@ -342,6 +343,41 @@ export default function PredictionPage({ departmentFilter, courseFilter }) {
                   <p className="text-sm text-muted-foreground bg-muted/50 p-3 rounded-lg">{result.explanation}</p>
                 </div>
 
+                {/* Categorized Risk Analysis */}
+                {result.categorizedRisk && (
+                  <div>
+                    <h4 className="font-semibold mb-3 text-sm">Categorized Risk Analysis</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {/* Financial Risk */}
+                      <div className={`p-3 rounded-lg ${result.categorizedRisk.financial.isAtRisk ? 'bg-destructive/10 border border-destructive/20' : 'bg-emerald-50 border border-emerald-200'}`}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <DollarSign className={`w-4 h-4 ${result.categorizedRisk.financial.isAtRisk ? 'text-destructive' : 'text-emerald-600'}`} />
+                          <span className="font-medium text-sm">Financial</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground">{result.categorizedRisk.financial.explanation}</p>
+                      </div>
+
+                      {/* Personal Risk */}
+                      <div className={`p-3 rounded-lg ${result.categorizedRisk.personal.isAtRisk ? 'bg-destructive/10 border border-destructive/20' : 'bg-emerald-50 border border-emerald-200'}`}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <User className={`w-4 h-4 ${result.categorizedRisk.personal.isAtRisk ? 'text-destructive' : 'text-emerald-600'}`} />
+                          <span className="font-medium text-sm">Personal</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground">{result.categorizedRisk.personal.explanation}</p>
+                      </div>
+
+                      {/* Academic Risk */}
+                      <div className={`p-3 rounded-lg ${result.categorizedRisk.academic.isAtRisk ? 'bg-destructive/10 border border-destructive/20' : 'bg-emerald-50 border border-emerald-200'}`}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <BookOpen className={`w-4 h-4 ${result.categorizedRisk.academic.isAtRisk ? 'text-destructive' : 'text-emerald-600'}`} />
+                          <span className="font-medium text-sm">Academic</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground">{result.categorizedRisk.academic.explanation}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-semibold mb-2 text-emerald-600 text-sm">Strengths</h4>
@@ -389,7 +425,14 @@ export default function PredictionPage({ departmentFilter, courseFilter }) {
 
       {predictions.length > 0 && (
         <Card className="mt-6">
-          <CardHeader><CardTitle className="text-base">Recent Predictions</CardTitle></CardHeader>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-base">Recent Predictions</CardTitle>
+              <Button variant="outline" onClick={() => qc.invalidateQueries({ queryKey: ['predictions'] })}>
+                Refresh
+              </Button>
+            </div>
+          </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {predictions.slice(0, 10).map(p => (

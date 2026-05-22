@@ -41,7 +41,7 @@ const getAppParams = () => {
 	}
 	return {
 		fromUrl: getAppParamValue("fromUrl", { defaultValue: window.location.href }),
-		appId: getAppParamValue("appId"),
+		appId: getAppParamValue("appId", { defaultValue: "disabled" }),
 		token: getAppParamValue("token"),
 		functionsVersion: getAppParamValue("functionsVersion", { defaultValue: "v1" }),
 		appBaseUrl: getAppParamValue("appBaseUrl"),

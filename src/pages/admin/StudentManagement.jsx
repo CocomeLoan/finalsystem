@@ -41,13 +41,13 @@ export default function StudentManagement({ departmentFilter, courseFilter }) {
     ? [...new Set(baseFiltered.filter(s => s.department === deptFilter).map(s => s.course))].filter(Boolean).sort()
     : [];
   const allYears = courseFilter2
-    ? [...new Set(baseFiltered.filter(s => s.course === courseFilter2).map(s => s.year))].filter(Boolean).sort()
+    ? [...new Set(baseFiltered.filter(s => s.course === courseFilter2).map(s => s.year_level))].filter(Boolean).sort()
     : [];
 
   const filtered = baseFiltered.filter(s => {
     if (deptFilter && s.department !== deptFilter) return false;
     if (courseFilter2 && s.course !== courseFilter2) return false;
-    if (yearFilter && s.year !== parseInt(yearFilter)) return false;
+    if (yearFilter && s.year_level !== parseInt(yearFilter)) return false;
     return true;
   });
 
@@ -76,12 +76,15 @@ export default function StudentManagement({ departmentFilter, courseFilter }) {
 
   const columns = [
     { key: 'student_id', label: 'Student ID' },
-    { key: 'name', label: 'Name' },
+    { key: 'full_name', label: 'Name' },
     { key: 'course', label: 'Course' },
     { key: 'department', label: 'Department', render: (row) => (
       <Badge variant="outline" className="text-xs">{row.department}</Badge>
     )},
-    { key: 'year', label: 'Year' },
+    { key: 'year_level', label: 'Year' },
+    { key: 'concerns', label: 'Concerns', render: (row) => (
+      <span className="text-sm text-muted-foreground truncate max-w-[150px]">{row.concerns || '—'}</span>
+    )},
     { key: 'status', label: 'Status', render: (row) => (
       <Badge variant={row.status === 'active' ? 'default' : 'secondary'} className="text-xs">
         {row.status || 'active'}
@@ -158,7 +161,7 @@ export default function StudentManagement({ departmentFilter, courseFilter }) {
         </div>
       )}
 
-      <DataTable columns={columns} data={filtered} searchField="name" />
+      <DataTable columns={columns} data={filtered} searchField="full_name" onRowClick={() => {}} />
 
       <StudentFormModal
         open={formOpen}

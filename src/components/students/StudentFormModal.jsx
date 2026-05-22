@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Plus, X, GraduationCap, BookOpen, DollarSign, AlertCircle } from 'lucide-react';
 import { supabase } from '@/api/supabaseClient';
+import { toast } from 'sonner';
 
 const DEPARTMENTS = ['CAS', 'CBM', 'CCIS', 'CCJE', 'CTE', 'CTHM'];
 
@@ -69,12 +70,17 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
     problem_description: '',
   });
 
+  const handleDepartmentChange = (value) => {
+    setForm({ ...form, department: value, course: '' });
+  };
+
   const handleCourseChange = (value) => {
     const department = getDepartmentByCourse(value);
     setForm({ ...form, course: value, department });
   };
 
   const [gpaEntry, setGpaEntry] = useState({ semester: '', gpa: '' });
+  const [subjectGradeEntry, setSubjectGradeEntry] = useState({ subject: '', grade: '' });
 
   useEffect(() => {
     if (student) {
@@ -116,6 +122,13 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!form.student_id || !form.name || !form.department || !form.course) {
+      toast.error('Please fill in all required fields (Student ID, Name, Department, Course)');
+      return;
+    }
+    
     // Convert form data to match database schema
     const submitData = {
       student_id: form.student_id,
@@ -130,6 +143,8 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
       scholarship: form.scholarship,
       family_income: form.family_income ? parseFloat(form.family_income) : null,
       gpa_history: form.gpa_history,
+      subject_grades: form.subject_grades,
+      problem_description: form.problem_description,
       status: 'active',
     };
     onSubmit(submitData);
@@ -150,6 +165,39 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
       ...form,
       gpa_history: form.gpa_history.filter((_, i) => i !== index),
     });
+  };
+
+  const addSubjectGrade = () => {
+    if (subjectGradeEntry.subject && subjectGradeEntry.grade) {
+      const grade = parseFloat(subjectGradeEntry.grade);
+      const isWeakness = grade >= 2.5;
+      const recommendation = isWeakness 
+        ? `Consider seeking tutoring for ${subjectGradeEntry.subject} and reviewing study materials.`
+        : '';
+      
+      setForm({
+        ...form,
+        subject_grades: [...form.subject_grades, { 
+          subject: subjectGradeEntry.subject, 
+          grade: grade,
+          is_weakness: isWeakness,
+          recommendation: recommendation
+        }],
+      });
+      setSubjectGradeEntry({ subject: '', grade: '' });
+    }
+  };
+
+  const removeSubjectGrade = (index) => {
+    setForm({
+      ...form,
+      subject_grades: form.subject_grades.filter((_, i) => i !== index),
+    });
+  };
+
+  const getFilteredCourses = () => {
+    if (!form.department) return COURSES;
+    return COURSES.filter(course => COURSE_DEPARTMENT_MAP[course] === form.department);
   };
 
   return (
@@ -195,7 +243,7 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
               <div className="grid grid-cols-3 gap-4">
                 <div>
                   <Label htmlFor="department">Department</Label>
-                  <Select value={form.department} onValueChange={val => setForm({ ...form, department: val })}>
+                  <Select value={form.department} onValueChange={handleDepartmentChange}>
                     <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
                     <SelectContent>
                       {DEPARTMENTS.map(d => <SelectItem key={d} value={d}>{d}</SelectItem>)}
@@ -204,10 +252,10 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
                 </div>
                 <div>
                   <Label htmlFor="course">Course</Label>
-                  <Select value={form.course} onValueChange={val => setForm({ ...form, course: val })}>
-                    <SelectTrigger><SelectValue placeholder="Select" /></SelectTrigger>
+                  <Select value={form.course} onValueChange={handleCourseChange} disabled={!form.department}>
+                    <SelectTrigger><SelectValue placeholder={form.department ? "Select" : "Select department first"} /></SelectTrigger>
                     <SelectContent>
-                      {COURSES.map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+                      {getFilteredCourses().map(c => <SelectItem key={c} value={c}>{c}</SelectItem>)}
                     </SelectContent>
                   </Select>
                 </div>
@@ -368,11 +416,53 @@ export default function StudentFormModal({ open, onClose, onSubmit, student, isL
             <CardHeader>
               <CardTitle className="text-base">Subject Grades (Optional)</CardTitle>
             </CardHeader>
-            <CardContent>
-              <Button type="button" variant="outline" className="w-full">
-                <Plus className="w-4 h-4 mr-2" />
-                Add Subject Grades
-              </Button>
+            <CardContent className="space-y-4">
+              <div className="flex gap-2">
+                <Input
+                  placeholder="Subject name (e.g., Mathematics)"
+                  value={subjectGradeEntry.subject}
+                  onChange={e => setSubjectGradeEntry({ ...subjectGradeEntry, subject: e.target.value })}
+                />
+                <Input
+                  type="number"
+                  step="0.01"
+                  min="1.0"
+                  max="5.0"
+                  placeholder="Grade"
+                  className="w-24"
+                  value={subjectGradeEntry.grade}
+                  onChange={e => setSubjectGradeEntry({ ...subjectGradeEntry, grade: e.target.value })}
+                />
+                <Button type="button" onClick={addSubjectGrade} size="icon">
+                  <Plus className="w-4 h-4" />
+                </Button>
+              </div>
+              {form.subject_grades.length > 0 && (
+                <div className="mt-3 space-y-2">
+                  {form.subject_grades.map((entry, index) => (
+                    <div key={index} className="flex items-center justify-between p-2 rounded bg-muted/50">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm">{entry.subject}: </span>
+                        <Badge variant={entry.is_weakness ? 'destructive' : 'secondary'}>{entry.grade}</Badge>
+                        {entry.is_weakness && <Badge variant="outline" className="text-xs">Weakness</Badge>}
+                      </div>
+                      <Button type="button" onClick={() => removeSubjectGrade(index)} size="icon" variant="ghost">
+                        <X className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {form.subject_grades.some(sg => sg.is_weakness) && (
+                <div className="mt-3 p-3 rounded bg-yellow-50 border border-yellow-200">
+                  <p className="text-sm text-yellow-800 font-medium">Recommendations for weak subjects:</p>
+                  <ul className="text-sm text-yellow-700 mt-1 list-disc list-inside">
+                    {form.subject_grades.filter(sg => sg.is_weakness).map((sg, i) => (
+                      <li key={i}>{sg.recommendation}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </CardContent>
           </Card>
 

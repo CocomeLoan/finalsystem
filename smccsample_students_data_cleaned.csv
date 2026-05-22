@@ -1,0 +1,69 @@
+student_id,full_name,course,year_level,department,study_hours,library_visits,scholarship,scholarship_amount,family_income,gpa_y1s1,gpa_y1s2,gpa_y2s1,gpa_y2s2,gpa_y3s1,lms_login_per_month,status,like_course,interested_in_subjects,course_motivates,satisfied_with_performance,previous_grades_affect,try_improve_grades,study_regularly,submit_on_time,manage_time_well,instructors_explain_clearly,approach_instructors,instructors_encourage,classmates_influence_positively,work_well_with_classmates,friends_motivate,concerns
+STU-001,Ace Edizon Abad,BSCS,3,CCIS,2,4,no,0,10000,2.3,1.9,1.89,2.0,1.88,4,active,3,3,3,3,3,5,3,3,2,3,4,4,4,5,4,Difficulty balancing studies with part-time work
+STU-002,Jia Acabo,BSCS,3,CCIS,1,5,yes,20000,10000,1.66,1.53,1.58,1.5,1.51,7,active,4,4,5,4,4,5,4,5,4,4,5,4,3,4,4,Financial constraints affecting academic performance
+STU-003,Kevin jun A. Maestro,BSCS,3,CCIS,1,4,no,0,40000,2.09,1.59,1.7,1.54,1.53,4,active,4,3,4,4,4,4,4,3,3,4,4,4,4,3,4,No major concerns at the moment
+STU-004,Jomari Betonio,BSCS,3,CCIS,2,2,yes,10000,20000,2.03,1.9,1.8,1.96,1.97,4,active,3,3,4,4,3,4,3,3,3,4,4,4,3,3,3,Struggling with advanced programming subjects
+STU-005,Diether Flores,BSCS,3,CCIS,2,2,yes,10000,20000,1.8,1.64,1.9,1.75,1.79,6,active,4,5,4,5,3,5,3,3,3,3,3,2,3,3,3,Need better time management for projects
+STU-006,Trixia Lee Lope,BSCS,3,CCIS,1,2,yes,10000,10000,1.64,1.71,2.1,1.97,1.86,4,active,3,3,3,3,3,5,3,4,3,4,4,4,4,4,4,Difficulty understanding some core subjects
+STU-007,Eric ,BSCS,3,CCIS,4,4,no,0,20000,1.62,1.53,,,,6,active,3,4,3,3,3,4,3,4,3,4,4,4,4,4,4,Lack of motivation and interest in current course
+STU-008,Almer Bongcahig,BSCS,3,CCIS,1,2,yes,13000,20000,1.6,1.6,1.8,1.8,1.6,4,active,4,3,4,4,3,5,3,4,3,4,4,3,3,3,3,No significant concerns
+STU-009,Sunshine Tejadillo,BSCS,3,CCIS,2,4,no,0,10000,1.71,1.7,1.71,1.7,1.7,4,active,4,4,4,4,4,4,4,5,4,4,3,3,3,2,3,Balancing family responsibilities with studies
+STU-010,Roselyn Saavedra,BSCS,3,CCIS,2,4,yes,10000,10000,1.68,,,,,7,active,2,2,1,3,2,2,1,1,2,4,3,2,3,2,2,Struggling with course materials and deadlines
+STU-011,Trisha Macarayan,BLIS,3,CCIS,1,4,yes,13500,20000,1.48,1.46,1.39,1.56,1.39,4,active,4,4,5,5,4,4,4,4,4,4,4,3,3,3,3,"No major issues, enjoying the program"
+STU-012,Emirald Sabandal,BLIS,3,CCIS,2,4,yes,13500,20000,1.52,1.47,1.42,1.47,1.36,4,active,4,4,5,5,4,4,4,4,4,4,4,3,4,4,3,Need more library resources for research
+STU-013,Cheryl Atad,BLIS,3,CCIS,2,5,yes,13500,10000,1.61,1.56,1.44,1.77,1.5,4,active,4,5,4,4,4,5,4,4,4,4,4,4,4,4,4,Managing group projects effectively
+STU-014,Jay-uanie Mansartihan Binongcasan,BLIS,3,CCIS,1,5,yes,13500,20000,1.8,1.75,1.58,1.71,1.69,4,active,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,"No concerns, good academic standing"
+STU-015,Ashly Llavan,BLIS,3,CCIS,2,5,yes,13500,10000,1.64,1.48,1.47,1.63,1.47,4,active,4,4,4,4,4,5,4,5,4,4,3,3,3,4,3,Difficulty with some information science concepts
+STU-016,Benedict Licong,BSIT,3,CCIS,1,2,no,0,20000,1.77,1.75,1.7,1.5,1.64,2,active,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,Need better study habits for IT subjects
+STU-017,Jane Ranario,BLIS,3,CCIS,2,5,yes,13500,10000,1.47,1.51,1.52,1.58,1.46,6,active,4,5,5,5,5,5,4,5,4,4,3,4,4,3,3,No significant challenges
+STU-018,Mariel Ordiz,BLIS,3,CCIS,2,4,yes,13500,10000,1.68,1.59,1.5,1.53,1.54,2,active,4,5,4,5,4,4,3,4,3,3,3,3,2,3,3,Adapting well to program requirements
+STU-019,Larianmar Pancho ,BSCS,3,CCIS,2,2,yes,10000,10000,1.8,1.69,1.64,1.8,1.5,2,active,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,Need help with programming assignments
+STU-020,Reina Joyce Suazo,BSIT,3,CCIS,2,2,yes,13500,40000,1.63,1.69,1.58,1.65,1.57,4,active,4,4,4,4,5,5,4,4,4,4,4,4,4,4,4,"No concerns, performing well academically"
+STU-021,Aijalon Sindo ,BSCS,3,CCIS,1,4,yes,13500,40000,1.55,1.68,1.65,1.48,1.43,4,active,4,5,4,3,4,4,4,5,4,4,3,3,4,4,3,Balancing academics with extracurricular activities
+STU-022,Althea Mae Custan,BSIT,3,CCIS,2,4,yes,13500,20000,1.75,1.68,1.68,1.68,1.58,6,active,3,3,3,3,3,3,2,3,3,3,3,3,3,3,4,"No major issues, good progress"
+STU-023,Bea Taglucop,BSIT,3,CCIS,2,2,yes,13500,10000,1.9,1.83,1.73,1.56,,4,active,3,3,3,3,3,3,3,3,3,3,3,3,4,4,3,Need assistance with database concepts
+STU-024,Nilmay Pepito,BSIT,3,CCIS,2,5,yes,20000,20000,1.71,1.9,1.78,1.92,1.88,7,active,3,3,3,3,3,3,2,3,2,3,3,3,3,4,3,"No concerns, excellent academic performance"
+STU-025,Ivy loque,BSIT,3,CCIS,1,2,yes,10000,10000,1.95,2.6,1.9,2.1,,2,active,4,5,5,5,5,5,4,5,4,4,4,3,3,3,3,Difficulty with some IT foundation subjects
+STU-026,Hurry Kim R. Semana,BSIT,3,CCIS,4,5,yes,13500,40000,1.74,1.87,1.65,1.58,1.57,6,active,4,4,4,4,4,4,4,4,4,4,3,3,3,3,2,No significant challenges
+STU-027,Eeyore Josh Chiong,BSCS,3,CCIS,5,5,yes,15000,10000,1.9,2.0,1.8,1.7,1.4,7,active,3,3,3,3,3,3,3,3,2,3,4,3,3,3,3,Managing heavy course load effectively
+STU-028,Honey Cabatingan,BSIT,3,CCIS,2,5,yes,13000,10000,1.69,1.69,1.69,1.67,1.5,4,active,3,3,3,3,4,4,4,5,4,4,4,4,4,3,3,Need better time management skills
+STU-029,Gerald Danuco,BSIT,3,CCIS,2,2,yes,13500,10000,1.69,1.73,1.61,1.8,1.63,4,active,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,No major concerns
+STU-030,Janryl Signar,BSCS,3,CCIS,4,4,yes,10000,10000,1.89,1.62,1.64,1.8,1.63,6,active,4,4,4,5,4,5,4,5,4,4,4,4,4,4,4,Struggling with advanced algorithms
+STU-031,Bea Boniel,BSCS,3,CCIS,2,2,yes,13500,20000,1.8,1.7,1.5,1.6,1.7,4,active,3,3,3,3,3,3,3,3,3,3,4,3,3,3,3,No significant issues
+STU-032,REZZA MAE D. RELOSA,BSCS,3,CCIS,2,2,Yes,10000,10000,1.93,1.8,1.75,,,4,active,4,4,4,5,4,4,4,4,4,4,4,3,3,3,3,Need more library resources for research
+STU-033,Izzie Tadiarca ,BSTM,2,CTHM,2,4,No,0,10000,1.88,1.9,1.86,,,4,active,4,4,5,5,4,5,4,4,4,4,3,3,3,3,3,Managing group projects effectively
+STU-034,Rosemarie Jen M. Buhisan,BSTM,2,CTHM,2,5,No,0,40000,1.78,1.65,1.88,,,7,active,4,4,5,5,5,5,4,4,4,5,4,4,4,4,4,"No concerns, good academic standing"
+STU-035,Shahani Denise Almamento ,BSTM,2,CTHM,4,2,No,0,20000,1.92,1.85,1.74,,,2,active,4,4,4,4,4,4,4,4,4,5,4,4,4,3,3,Difficulty with some information science concepts
+STU-036,xyza,BSTM,2,CTHM,2,4,Yes,10000,10000,1.86,1.9,1.7,,,2,active,4,5,4,5,4,4,3,3,3,3,3,3,3,3,2,Need better study habits for IT subjects
+STU-037,Rhea Nicole B. Timbal,BSTM ,2,CTHM,2,4,Yes,13500,10000,1.92,1.84,1.67,,,7,active,4,5,5,5,5,5,4,4,4,5,4,4,4,4,4,No significant challenges
+STU-038,Ahlex Mikaela Brodith,BSTM,2,CTHM,2,5,No,0,10000,1.68,1.97,1.7,,,4,active,5,5,4,5,5,5,4,4,4,5,5,4,4,4,4,Adapting well to program requirements
+STU-039,Roxanne Gratol,BSTM,2,CTHM,2,4,No,0,20000,1.89,1.78,1.76,,,4,active,5,5,4,5,4,4,4,4,4,4,4,3,3,3,3,Need help with programming assignments
+STU-040,Mary ,BLIS,3,CCIS,1,5,Yes,10000,10000,2.0,1.98,1.9,,,4,active,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,"No concerns, performing well academically"
+STU-041,Clark Justin S. Algarme,BSCS,1,CCIS,2,5,Yes,15000,10000,1.8,1.63,1.59,,,4,active,5,5,5,5,5,5,4,4,4,4,4,3,3,4,3,Balancing academics with extracurricular activities
+STU-042,JEN,BSTM,3,CTHM,1,4,No,0,30000,1.64,1.6,1.46,,,2,active,5,5,5,4,3,4,4,4,4,5,4,4,4,4,4,"No major issues, good progress"
+STU-043,Jaila Conteniente ,BSTM,2,CTHM,4,4,No,0,10000,1.7,1.83,1.79,,,7,active,4,4,5,4,4,4,3,3,3,3,3,3,3,3,3,Need assistance with database concepts
+STU-044,Phoebe Kate Agregado Sincero,BSBA-FM,1,CBM,2,2,No,0,10000,1.7,1.6,0.0,,,2,active,5,5,3,3,5,5,3,5,5,5,5,5,4,4,4,"No concerns, excellent academic performance"
+STU-045,TM,BSTM,2,CTHM,2,4,Yes,10000,10000,1.49,1.64,1.43,,,6,active,5,4,5,3,5,5,3,3,3,3,4,4,5,5,5,Difficulty with some IT foundation subjects
+STU-046,Linzy,BSTM,3,CTHM,4,4,Yes,13500,20000,1.65,1.58,1.75,1.7,1.8,6,active,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,No significant challenges
+STU-047,Honey Ahzel Delfin,BSTM,2,CTHM,1,2,Yes,13500,40000,1.84,1.78,1.6,,,2,active,3,3,2,3,3,3,2,3,3,3,3,3,3,3,3,Managing heavy course load effectively
+STU-048,Ann Jenneth Gallenero ,BSTM,2,CTHM,2,4,Yes,13500,20000,1.48,1.72,1.41,,,4,active,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,Need better time management skills
+STU-049,Charlie sheen guergio ,BSTM,2,CTHM,1,2,Yes,13500,20000,1.75,1.75,1.52,1.52,1.73,2,active,3,2,1,1,2,3,1,2,2,2,2,2,2,2,2,No major concerns
+STU-050,Meryl Cajeles ,BSTM,2,CTHM,5,4,Yes,13500,10000,1.56,1.62,1.52,1.4,,2,active,5,4,4,4,4,5,4,4,4,3,3,4,4,4,4,Struggling with advanced algorithms
+STU-051,Angilyn L.Sulhayan ,BSTM,2,CTHM,1,4,Yes,13500,40000,1.78,1.84,1.5,,,6,active,5,5,5,4,4,5,5,5,5,5,4,4,5,5,5,No significant issues
+STU-052,Abigail Tanso,BSTM,2,CTHM,5,5,Yes,13500,10000,1.55,1.66,1.44,,,6,active,5,4,5,5,3,4,5,4,5,5,4,5,4,5,5,Adapting well to program requirements
+STU-053,RANDOM,BSTM,2,CTHM,2,2,Yes,10000,20000,1.87,1.76,1.8,,,6,active,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,Need help with programming assignments
+STU-054,april jude D. Bernados,BSTM,2,CTHM,4,5,Yes,13500,40000,1.8,1.63,1.7,,,4,active,4,4,4,4,4,4,4,4,4,4,4,3,4,4,4,"No concerns, performing well academically"
+STU-055,Hannali Claire Redoble,BSTM,2,CTHM,1,4,No,0,20000,,1.7,1.89,,,7,active,4,5,4,5,4,4,4,4,4,4,4,3,3,3,3,Balancing academics with extracurricular activities
+STU-056,Brex Grande,BSTM,2,CTHM,2,4,Yes,10000,30000,1.72,1.8,1.6,,,2,active,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,"No major issues, good progress"
+STU-057,Cheryl Joy A. Matabaran,BSTM,2,CTHM,4,5,Yes,13500,20000,1.57,1.64,1.43,,,4,active,4,4,4,3,3,5,3,3,3,4,4,4,4,4,4,Need assistance with database concepts
+STU-058,Krystene L. Cabilogan,BSTM,2,CTHM,2,4,Yes,10000,10000,1.9,1.69,1.8,,,7,active,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,"No concerns, excellent academic performance"
+STU-059,Almer B. Bongcahig,BSCS,3,CCIS,2,5,Yes,10000,40000,1.83,1.68,1.8,1.74,1.69,6,active,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,Difficulty with some IT foundation subjects
+STU-060,Rio Barcelon,BSCS,3,CCIS,2,4,Yes,10000,20000,1.5,1.4,1.5,1.7,1.5,4,active,4,3,4,3,5,5,3,4,4,3,4,4,4,5,4,No significant challenges
+STU-061,Maekyla A. Namoc ,BSBA-OM,1,CBM,2,2,No,0,10000,1.86,,,,,2,active,5,5,5,5,5,5,4,4,5,5,5,3,3,3,3,Managing heavy course load effectively
+STU-062,Jade Tanio Osorio,BSBA-HRM,1,CBM,2,5,No,0,20000,1.95,,,,,4,active,4,4,4,4,5,5,4,4,4,4,5,3,4,4,3,Difficulty with some IT foundation subjects
+STU-063,Blecy M. Soreño,BSBA-HRM,1,CBM,2,5,No,0,10000,1.73,,,,,7,active,4,4,4,4,4,4,4,3,3,3,4,3,3,4,3,No significant challenges
+STU-064,John Phil Belmonte,BSCS,1,CCIS,1,2,No,0,10000,1.68,1.73,,,,2,active,3,3,2,2,3,4,3,2,2,3,4,3,5,5,5,Managing heavy course load effectively
+STU-065,Jehmarie Alisoso,BSCS,1,CCIS,1,2,Yes,10000,10000,1.65,,,,,4,active,3,2,3,2,3,4,2,2,3,2,3,3,4,4,4,Need better time management skills
+STU-066,Miko,BS-Criminology,3,CCJE,2,4,Yes,13500,10000,1.94,2.01,2.13,2.21,2.25,4,active,3,3,3,3,3,3,4,5,4,4,3,4,4,4,4,No major concerns
+STU-067,CHE,BSIT,2,CCIS,4,4,Yes,20000,10000,1.72,,,,,6,active,4,4,3,2,5,5,3,3,2,2,2,3,3,4,2,Struggling with advanced algorithms
+STU-068,Jae Montilla,BSIT,1,CCIS,1,4,No,0,10000,1.8,1.76,,,,4,active,4,4,4,3,3,4,3,3,3,4,3,4,3,3,3,No significant issues

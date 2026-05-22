@@ -18,7 +18,15 @@ export default function StudentGrades() {
 
   const student = students.find(s => s.student_id === studentId);
   const myGrades = grades.filter(g => g.student_id === studentId);
-  const gpaHistory = student?.gpa_history || [];
+
+  // Build GPA history from individual GPA columns
+  const gpaHistory = student ? [
+    { semester: '1st Yr 1st Sem', gpa: student.gpa_y1s1 },
+    { semester: '1st Yr 2nd Sem', gpa: student.gpa_y1s2 },
+    { semester: '2nd Yr 1st Sem', gpa: student.gpa_y2s1 },
+    { semester: '2nd Yr 2nd Sem', gpa: student.gpa_y2s2 },
+    { semester: '3rd Yr 1st Sem', gpa: student.gpa_y3s1 },
+  ].filter(h => h.gpa !== null && h.gpa !== undefined) : [];
 
   const columns = [
     { key: 'subject', label: 'Subject' },

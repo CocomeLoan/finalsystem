@@ -12,6 +12,11 @@ import { usePortalAuth } from '@/lib/PortalAuthContext';
 const PORTAL_USERS = [
   { identifier: 'admin@smcc.edu', password: 'admin123', role: 'admin', displayName: 'Administrator' },
   { identifier: 'dean.ccis@smcc.edu', password: 'dean123', role: 'dean', displayName: 'Dean – CCIS' },
+  { identifier: 'dean.cas@smcc.edu', password: 'dean123', role: 'dean', displayName: 'Dean – CAS' },
+  { identifier: 'dean.cbm@smcc.edu', password: 'dean123', role: 'dean', displayName: 'Dean – CBM' },
+  { identifier: 'dean.ccje@smcc.edu', password: 'dean123', role: 'dean', displayName: 'Dean – CCJE' },
+  { identifier: 'dean.cte@smcc.edu', password: 'dean123', role: 'dean', displayName: 'Dean – CTE' },
+  { identifier: 'dean.cthm@smcc.edu', password: 'dean123', role: 'dean', displayName: 'Dean – CTHM' },
   { identifier: 'Dev2026', password: 'Developer2026', role: 'developer', displayName: 'Developer' },
 ];
 

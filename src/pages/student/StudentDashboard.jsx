@@ -21,13 +21,21 @@ export default function StudentDashboard() {
   const myPredictions = predictions.filter(p => p.student_id === studentId);
   const myGrades = grades.filter(g => g.student_id === studentId);
   const latestPrediction = myPredictions[0];
-  const gpaHistory = student?.gpa_history || [];
+
+  // Build GPA history from individual GPA columns
+  const gpaHistory = student ? [
+    { semester: '1st Yr 1st Sem', gpa: student.gpa_y1s1 },
+    { semester: '1st Yr 2nd Sem', gpa: student.gpa_y1s2 },
+    { semester: '2nd Yr 1st Sem', gpa: student.gpa_y2s1 },
+    { semester: '2nd Yr 2nd Sem', gpa: student.gpa_y2s2 },
+    { semester: '3rd Yr 1st Sem', gpa: student.gpa_y3s1 },
+  ].filter(h => h.gpa !== null && h.gpa !== undefined) : [];
   const currentGPA = getLatestGPA(gpaHistory);
 
   return (
     <div className="space-y-6">
       <PageHeader
-        title={`Welcome, ${student?.name || portalUser?.displayName || 'Student'}`}
+        title={`Welcome, ${student?.full_name || portalUser?.displayName || 'Student'}`}
         description="Your personal academic performance dashboard"
       />
 
@@ -47,7 +55,7 @@ export default function StudentDashboard() {
               </div>
               <div className="p-3 rounded-lg bg-muted/50">
                 <p className="text-xs text-muted-foreground">Full Name</p>
-                <p className="font-semibold">{student.name}</p>
+                <p className="font-semibold">{student.full_name}</p>
               </div>
               <div className="p-3 rounded-lg bg-muted/50">
                 <p className="text-xs text-muted-foreground">Course</p>
@@ -59,7 +67,7 @@ export default function StudentDashboard() {
               </div>
               <div className="p-3 rounded-lg bg-muted/50">
                 <p className="text-xs text-muted-foreground">Year Level</p>
-                <p className="font-semibold">Year {student.year}</p>
+                <p className="font-semibold">Year {student.year_level}</p>
               </div>
               <div className="p-3 rounded-lg bg-muted/50">
                 <p className="text-xs text-muted-foreground">Email</p>
@@ -98,14 +106,14 @@ export default function StudentDashboard() {
           </div>
         </div>
         <div className="p-4 rounded-xl border bg-card shadow-sm flex items-center gap-4">
-          <div className={`p-2.5 rounded-lg ${latestPrediction?.result === 'At-Risk' ? 'bg-destructive/10' : 'bg-emerald-50'}`}>
-            {latestPrediction?.result === 'At-Risk'
+          <div className={`p-2.5 rounded-lg ${latestPrediction?.result === 'At-Risk' || latestPrediction?.result === 'Moderate Risk' ? 'bg-destructive/10' : 'bg-emerald-50'}`}>
+            {latestPrediction?.result === 'At-Risk' || latestPrediction?.result === 'Moderate Risk'
               ? <AlertTriangle className="w-5 h-5 text-destructive" />
               : <CheckCircle className="w-5 h-5 text-emerald-500" />}
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Academic Status</p>
-            <p className="font-bold text-sm">{latestPrediction?.result || 'No prediction yet'}</p>
+            <p className="font-bold text-sm">{latestPrediction?.result === 'Moderate Risk' ? 'At-Risk' : (latestPrediction?.result || 'No prediction yet')}</p>
           </div>
         </div>
       </div>
@@ -185,12 +193,12 @@ export default function StudentDashboard() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/50">
-              {latestPrediction.result === 'Good Standing'
+              {(latestPrediction.result === 'Good Standing')
                 ? <CheckCircle className="w-10 h-10 text-emerald-500 flex-shrink-0" />
                 : <AlertTriangle className="w-10 h-10 text-destructive flex-shrink-0" />}
               <div>
-                <Badge variant={latestPrediction.result === 'Good Standing' ? 'default' : 'destructive'} className="mb-1">
-                  {latestPrediction.result}
+                <Badge variant={(latestPrediction.result === 'Good Standing') ? 'default' : 'destructive'} className="mb-1">
+                  {latestPrediction.result === 'Moderate Risk' ? 'At-Risk' : latestPrediction.result}
                 </Badge>
                 <p className="text-sm text-muted-foreground">
                   Confidence: {((latestPrediction.confidence || 0) * 100).toFixed(0)}% • Model: {latestPrediction.model_used}
